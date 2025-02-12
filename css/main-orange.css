@@ -98,10 +98,10 @@ h4 {
   margin-bottom: 10px;
 }
 a {
-  color: #4f8db3;
+  color: #210f4d;
 }
 a:hover {
-  color: #2f556d;
+  color: #210f4d ;
 }
 /*--------------------------------------------------------------------------
 +	Services Style
@@ -1689,8 +1689,8 @@ span.color-red {
 +	Breadcrumbs Section Style
 --------------------------------------------------------------------------*/
 .section-breadcrumbs {
-  background: #222;
-  background: rgba(34, 34, 34, 0.8);
+  background: #200648 ;
+  background: rgba(32, 6, 72);
   margin-bottom: 10px;
 }
 .section-breadcrumbs h1 {
