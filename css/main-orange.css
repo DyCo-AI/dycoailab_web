@@ -1728,9 +1728,9 @@ span.color-red {
   text-align: left;
   text-indent: -9999px;
   display: block;
-  width: 115px;
-  height: 40px;
-  background: url(../img/stay-connected.png);
+  width: 155px;
+  height: 20px;
+  background: url(../img/researchgate.png);
   -webkit-opacity: 0.5;
   -moz-opacity: 0.5;
   opacity: 0.5;
@@ -1752,6 +1752,10 @@ span.color-red {
   background-position: -230px 0;
 }
 .footer-stay-connected a.googleplus {
+  background-position: 0 0;
+}
+
+.footer-stay-connected a.rgate {
   background-position: 0 0;
 }
 .footer-stay-connected li {
