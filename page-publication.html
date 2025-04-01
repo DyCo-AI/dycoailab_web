@@ -205,11 +205,11 @@
                                           <h6>
                                               <div class="panel panel-default text-justify">
                                                   <div class="panel-heading">
-                                                      <a class="accordion-toggle" data-toggle="collapse"  href="#collapse13">
+                                                      <a class="accordion-toggle" data-toggle="collapse"  href="#collapse21">
                                                           C Vilas Samak, T Vilas Samak, A Joglekar, U Vaidya, V Krovi, Digital Twins Meet the Koopman Operator: Data-Driven Learning for Robust Autonomy, Accepted for publication in ICRA.
                                                       </a>
                                                   </div>
-                                                  <div id="collapse13" class="accordion-body collapse">
+                                                  <div id="collapse21" class="accordion-body collapse">
                                                       <div class="accordion-inner">
                                                           <div class="answer text-justify">Abstract:
                                                               <p>Contrary to on-road autonomous navigation, off-road autonomy is complicated by various factors ranging from sensing challenges to terrain variability. In such a milieu, data-driven approaches have been commonly employed to capture intricate vehicle-environment interactions effectively. However, the success of data-driven methods depends crucially on the quality and quantity of data, which can be compromised by large variability in off-road environments. To address these concerns, we present a novel workflow to recreate the exact vehicle and its target operating conditions digitally for domain-specific data generation. This enables us to effectively model off-road vehicle dynamics from simulation data using the Koopman operator theory, and employ the obtained models for local motion planning and optimal vehicle control. The capabilities of the proposed methodology are demonstrated through an autonomous navigation problem of a 1:5 scale vehicle, where a terrain-informed planner is employed for global mission planning. Results indicate a substantial improvement in off-road navigation performance with the proposed algorithm (5.84x) and underscore the efficacy of digital twinning in terms of improving the sample efficiency (3.2x) and reducing the sim2real gap (5.2%).</p>
@@ -221,17 +221,62 @@
                                                       </div>
                                                   </div>
                                               </div></h6><!--Paper 2 End -->
+
+											  <!--Paper-->
+											  <h6>
+												<div class="panel panel-default text-justify">
+													<div class="panel-heading">
+														<a class="accordion-toggle" data-toggle="collapse"  href="#collapse22">
+															Jonghyeon Lee, Boumediene Hamzi, Boya Hou, Houman Owhadi, Gabriele Santin, and Umesh Vaidya, Kernel Methods for the Approximation of the Eigenfunctions of the Koopman Operator, Physica D.
+														</a>
+													</div>
+													<div id="collapse22" class="accordion-body collapse">
+														<div class="accordion-inner">
+															<div class="answer text-justify">Abstract:
+																<p>The Koopman operator provides a linear framework to study nonlinear dynamical systems. Its spectra offer valuable insights into system dynamics, but the operator can exhibit both discrete and continuous spectra, complicating direct computations. In this paper, we introduce a kernel-based method to construct the principal eigenfunctions of the Koopman operator without explicitly computing the operator itself. These principal eigenfunctions are associated with the equilibrium dynamics, and their eigenvalues match those of the linearization of the nonlinear system at the equilibrium point. We exploit the structure of the principal eigenfunctions by decomposing them into linear and nonlinear components. The linear part corresponds to the left eigenvector of the system's linearization at the equilibrium, while the nonlinear part is obtained by solving a partial differential equation (PDE) using kernel methods. Our approach avoids common issues such as spectral pollution and spurious eigenvalues, which can arise in previous methods. We demonstrate the effectiveness of our algorithm through numerical examples.</p>
+															</div>
+															<div class="answer text-justify">Paper:
+															<a href="https://arxiv.org/abs/2412.16588" target="_blank"> Kernel Methods for the Approximation of the Eigenfunctions of the Koopman Operator
+															</a>
+															</div>
+														</div>
+													</div>
+												</div></h6>
+											<!--Paper-->
+											  
+											  <!--Paper-->
+											  <h6>
+												<div class="panel panel-default text-justify">
+													<div class="panel-heading">
+														<a class="accordion-toggle" data-toggle="collapse"  href="#collapse23">
+															Jonghyeon Lee, Boumediene Hamzi, Houman Owhadi, Umesh Vaidya, A Note on Kernel Methods for the Construction of Lyapunov Functions using Koopman Eigenfunctions, IFAC symposium of Nonlinear Control Systems (2025)
+														</a>
+													</div>
+													<div id="collapse23" class="accordion-body collapse">
+														<div class="accordion-inner">
+															<div class="answer text-justify">Abstract:
+																<p>Methods have previously been developed for the approximation of Lyapunov functions using radial basis functions. We consider the problem of data-based approximation of a given Lyapunov function using the principal eigenfunctions of the Koopman operator without explicitly computing the operator itself. We demonstrate the effectiveness of our algorithm through numerical examples.</p>
+															</div>
+															<div class="answer text-justify">Paper:
+															<a href="https://scholar.google.com/citations?view_op=view_citation&hl=en&user=bzUVrKIAAAAJ&sortby=pubdate&citation_for_view=bzUVrKIAAAAJ:OTTXONDVkokC" target="_blank"> A Note on Kernel Methods for the Construction of Lyapunov Functions using Koopman Eigenfunctions
+															</a>
+															</div>
+														</div>
+													</div>
+												</div></h6>
+											<!--Paper-->
+											
                                           <!--Paper-->
                                           <h6>
                                               <div class="panel panel-default text-justify">
                                                   <div class="panel-heading">
-                                                      <a class="accordion-toggle" data-toggle="collapse"  href="#collapse22">
+                                                      <a class="accordion-toggle" data-toggle="collapse"  href="#collapse24">
                                                           Kumar, A., Umathe, B., Vaidya, U, Kelkar, A, Identifying lateral
                                                          stability regions in vehicle dynamics: a Koopman spectral approach.
                                                          Int. J. Dynam. Control 13, 40 (2025)
                                                       </a>
                                                   </div>
-                                                  <div id="collapse22" class="accordion-body collapse">
+                                                  <div id="collapse24" class="accordion-body collapse">
                                                       <div class="accordion-inner">
                                                           <div class="answer text-justify">Abstract:
                                                               <p>The paper is about characterizing the stability boundary of an autonomous dynamical system using the Koopman spectrum. For a dynamical system with an asymptotically stable equilibrium point, the domain of attraction constitutes a region consisting of all initial conditions attracted to the equilibrium point. The stability boundary is a separatrix region that separates the domain of attraction from the rest of the state space. For a large class of dynamical systems, this stability boundary consists of the union of stable manifolds of all the unstable equilibrium points on the stability boundary. We characterize the stable manifold in terms of the zero-level curve of the Koopman eigenfunction. A path-integral formula is proposed to compute the Koopman eigenfunction for a saddle-type equilibrium point on the stability boundary. The algorithm for identifying stability boundary based on the Koopman eigenfunction is attractive as it does not involve explicit knowledge of system dynamics. We present simulation results to verify the main results of the paper.</p>
@@ -246,21 +291,22 @@
 
                                           <!--Paper-->
                                       
+										  
                                           <!--Paper-->
                                           <h6>
                                               <div class="panel panel-default text-justify">
                                                   <div class="panel-heading">
-                                                      <a class="accordion-toggle" data-toggle="collapse"  href="#collapse22">
+                                                      <a class="accordion-toggle" data-toggle="collapse"  href="#collapse25">
                                                           Subhrajit Sinha, Sai Pushpak Nandanoori, Soumya Kundu, Umesh
                                                           Vaidya, On Characterization and Computation of Almost Every-
                                                           where Domain of Attraction, Accepted for publication in American
                                                           Control Conference, 2025.
                                                       </a>
                                                   </div>
-                                                  <div id="collapse22" class="accordion-body collapse">
+                                                  <div id="collapse25" class="accordion-body collapse">
                                                       <div class="accordion-inner">
                                                           <div class="answer text-justify">Abstract:
-                                                              <p>Abstract</p>
+                                                              <p>We consider the problem of navigating a nonlinear dynamical system from some initial set to some target set while avoiding collision with an unsafe set. We extend the concept of density function to control density function (CDF) for solving navigation problems with safety constraints. The occupancy-based interpretation of the measure associated with the density function is instrumental in imposing the safety constraints. The navigation problem with safety constraints is formulated as a quadratic program (QP) using CDF. The existing approach using the control barrier function (CBF) also formulates the navigation problem with safety constraints as QP. One of the main advantages of the proposed QP using CDF compared to QP formulated using CBF is that both the convergence/stability and safety can be combined and imposed using the CDF. Simulation results involving the Duffing oscillator and safe navigation of Dubin car models are provided to verify the main findings of the paper.</p>
                                                           </div>
                                                           <div class="answer text-justify">Paper:
                                                           <a href="https://ieeexplore.ieee.org/abstract/document/10644714" target="_blank"> Synthesizing controller for safe navigation using control density function.
@@ -276,14 +322,14 @@
                                           <h6>
                                               <div class="panel panel-default text-justify">
                                                   <div class="panel-heading">
-                                                      <a class="accordion-toggle" data-toggle="collapse"  href="#collapse22">
+                                                      <a class="accordion-toggle" data-toggle="collapse"  href="#collapse26">
                                                           Sriram Sundar Krishnamoorthy Shankara Narayanan, Joseph Moy-
                                                           alan, Andrew Zheng, Umesh Vaidya, Density Functions for Dy-
                                                           namic Safe Navigation of Robotic Systems, Accepted for publication
                                                           in American Control Conference, 2025.
                                                       </a>
                                                   </div>
-                                                  <div id="collapse22" class="accordion-body collapse">
+                                                  <div id="collapse26" class="accordion-body collapse">
                                                       <div class="accordion-inner">
                                                           <div class="answer text-justify">Abstract:
                                                               <p>This paper introduces a novel approach based on density functions for safe navigation in dynamic environments with time-varying obstacles and targets. We analytically construct time-varying density functions to address the challenges of dynamic safe navigation. Using this approach, we develop a safe feedback controller that ensures safety and almost everywhere stability in dynamic environments. The proposed framework is demonstrated on complex robotic systems, including the safe navigation of a quadruped robot with time-varying obstacles and sensor uncertainty, as well as a robotic arm tracking a time-varying target with static obstacles.</p>
