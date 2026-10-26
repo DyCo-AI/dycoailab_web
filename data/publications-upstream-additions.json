@@ -1,0 +1,18 @@
+[
+  {
+    "section": "Under Review",
+    "anchor": "under_review_2026_008",
+    "citation": "Sriram S. K. S. Narayanan and Umesh Vaidya, Distributed Risk-Aware Navigation of Heterogeneous Multi-Agent Teams in Unstructured Environments via Koopman Super eigenfunctions, Under review.",
+    "body": "Abstract: This paper develops distributed risk-aware navigation for heterogeneous agents with partial terrain information. Local quadratic programs minimally adjust nominal task and formation commands using finite-horizon rollout certificates and pairwise-separation constraints. The analysis establishes exponential comparison bounds for predictive terrain exposure, separation under exact neighbor velocity, and extensions for bounded velocity error and nonzero slack. A controlled planar example exercises both constraints in one QP and checks the analytic comparison envelopes, delay compensation, and slack contributions. A second example integrates three ground robots and an aerial agent with online terrain observations and belief-dependent goal selection. Two baseline missions reach different selected goals; a local height disturbance activates the terrain row, while an explicitly added belief-based recovery planner completes a blocked mission by selecting an alternative reachable goal. The simulations distinguish conditional theorem checks from application performance under sampled control, changing beliefs, and positive slack. Paper: Distributed Risk-Aware Navigation of Heterogeneous Multi-Agent Teams in Unstructured Environments via Koopman Super eigenfunctions",
+    "answers": [
+      "Abstract: This paper develops distributed risk-aware navigation for heterogeneous agents with partial terrain information. Local quadratic programs minimally adjust nominal task and formation commands using finite-horizon rollout certificates and pairwise-separation constraints. The analysis establishes exponential comparison bounds for predictive terrain exposure, separation under exact neighbor velocity, and extensions for bounded velocity error and nonzero slack. A controlled planar example exercises both constraints in one QP and checks the analytic comparison envelopes, delay compensation, and slack contributions. A second example integrates three ground robots and an aerial agent with online terrain observations and belief-dependent goal selection. Two baseline missions reach different selected goals; a local height disturbance activates the terrain row, while an explicitly added belief-based recovery planner completes a blocked mission by selecting an alternative reachable goal. The simulations distinguish conditional theorem checks from application performance under sampled control, changing beliefs, and positive slack.",
+      "Paper: Distributed Risk-Aware Navigation of Heterogeneous Multi-Agent Teams in Unstructured Environments via Koopman Super eigenfunctions"
+    ],
+    "links": [
+      {
+        "label": "Distributed Risk-Aware Navigation of Heterogeneous Multi-Agent Teams in Unstructured Environments via Koopman Super eigenfunctions",
+        "url": "https://github.com/DyCo-AI/Koopman-rollouts-acc/blob/main/Mutliagent_rollout_safety_QP__ACC2027.pdf"
+      }
+    ]
+  }
+]

@@ -1,249 +1,124 @@
-<!DOCTYPE html>
-<!--[if lt IE 7]>      <html class="no-js lt-ie9 lt-ie8 lt-ie7"> <![endif]-->
-<!--[if IE 7]>         <html class="no-js lt-ie9 lt-ie8"> <![endif]-->
-<!--[if IE 8]>         <html class="no-js lt-ie9"> <![endif]-->
-<!--[if gt IE 8]><!--> <html class="no-js"> <!--<![endif]-->
-    <head>
-        <meta charset="utf-8">
-        <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
-        <title>DyCo AI</title>
-        <meta name="description" content="">
-        <meta name="viewport" content="width=device-width">
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="description" content="Explore DyCoAI Laboratory research in operator-theoretic methods, information flow, off-road robotics, power systems, and cyber-physical systems at Clemson University.">
+  <meta name="theme-color" content="#522d80">
+  <title>Research at DyCoAI | Clemson University</title>
+  <link rel="stylesheet" href="css/home.css">
+  <link rel="stylesheet" href="css/research.css">
+  <script src="js/home.js" defer></script>
+</head>
+<body class="research-page">
+  <a class="skip-link" href="#main">Skip to content</a>
+  <header class="site-header">
+    <div class="container header-inner">
+      <a class="brand" href="index.html" aria-label="DyCoAI Laboratory home">
+        <span class="brand-name">DyCoAI <span>Laboratory</span></span>
+        <span class="brand-affiliation">Clemson University</span>
+      </a>
+      <button class="menu-toggle" type="button" aria-expanded="false" aria-controls="primary-navigation" aria-label="Open navigation" hidden><span aria-hidden="true" class="menu-symbol"></span></button>
+      <nav id="primary-navigation" aria-label="Main navigation">
+        <a href="index.html">Home</a>
+        <a href="page-Research.html" aria-current="page">Research</a>
+        <a href="index.html#projects">Projects</a>
+        <a href="page_research_team.html">People</a>
+        <a href="page-publication.html">Publications</a>
+        <a href="index.html#news">News</a>
+        <a href="#contact">Contact</a>
+      </nav>
+    </div>
+  </header>
+  <main id="main">
+    <section class="research-introduction" aria-labelledby="research-title">
+      <div class="container">
+        <p class="eyebrow">Dynamics &middot; Control &middot; Intelligence</p>
+        <h1 id="research-title">Research at DyCoAI</h1>
+        <p class="research-subtitle">From Mathematical Foundations to Reliable Autonomous and Networked Systems</p>
+        <p class="research-overview">Our research connects dynamical systems, operator theory, information flow, and control with the challenges of autonomy and interconnected infrastructure. We develop mathematical foundations and data-driven computational methods, then investigate their application to robotics, energy systems, and cyber-physical networks.</p>
+        <div class="text-links">
+          <a href="#foundational-research">Foundational Research <span aria-hidden="true">&darr;</span></a>
+          <a href="#application-research">Application Research <span aria-hidden="true">&darr;</span></a>
+        </div>
+      </div>
+    </section>
 
-        <link rel="stylesheet" href="css/bootstrap.min.css">
-        <link rel="stylesheet" href="css/icomoon-social.css">
-        <link href='http://fonts.googleapis.com/css?family=Open+Sans:400,700,600,800' rel='stylesheet' type='text/css'>
+    <section class="research-band section container" id="foundational-research" aria-labelledby="foundations-title">
+      <div class="section-heading">
+        <div><p class="eyebrow">Mathematical foundations</p><h2 id="foundations-title">Foundational Research</h2></div>
+      </div>
+      <div class="research-card-grid foundations-grid">
+        <article class="research-card research-card-featured" aria-labelledby="operator-title">
+          <div class="research-card-image">
+            <img src="img/homepage/duffing-koopman-eigenfunctions.png" alt="Two contour plots of Koopman eigenfunctions for the Duffing system" width="1422" height="601" fetchpriority="high">
+          </div>
+          <div class="research-card-content">
+            <h3 id="operator-title">Operator-Theoretic Methods for Dynamical Systems</h3>
+            <p>We use Koopman and Perron-Frobenius operators to describe nonlinear dynamics through the linear evolution of observables and densities. Spectral methods and data-driven approximations support stability analysis, reachability, and the design of optimal and safe controllers.</p>
+            <a class="text-link" href="page-project-details-4.html" aria-label="Explore Research: Operator-Theoretic Methods for Dynamical Systems">Explore Research <span aria-hidden="true">&rarr;</span></a>
+          </div>
+        </article>
+        <article class="research-card" aria-labelledby="information-title">
+          <div class="research-card-image">
+            <img src="img/Resize_image/information_flow/Research_detail_5.png" alt="Network diagrams, information-response patterns, and a control framework for shaping information flow" width="600" height="400" loading="lazy">
+          </div>
+          <div class="research-card-content">
+            <h3 id="information-title">Information Flow and Control Over Networks</h3>
+            <p>We quantify causal influence in dynamical networks and study how topology shapes information transfer. Our methods combine ergodic theory, stochastic dynamics, and control to analyze and regulate network interactions.</p>
+            <a class="text-link" href="page-project-details-5.html" aria-label="Explore Research: Information Flow and Control Over Networks">Explore Research <span aria-hidden="true">&rarr;</span></a>
+          </div>
+        </article>
+      </div>
+    </section>
 
-        <link rel="stylesheet" href="css/leaflet.css" />
-		<!--[if lte IE 8]>
-		    <link rel="stylesheet" href="css/leaflet.ie.css" />
-		<![endif]-->
-		<link rel="stylesheet" href="css/main-orange.css">
-
-        <script src="js/modernizr-2.6.2-respond-1.1.0.min.js"></script>
-    </head>
-    <body>
-        <!--[if lt IE 7]>
-            <p class="chromeframe">You are using an <strong>outdated</strong> browser. Please <a href="http://browsehappy.com/">upgrade your browser</a> or <a href="http://www.google.com/chromeframe/?redirect=true">activate Google Chrome Frame</a> to improve your experience.</p>
-        <![endif]-->
-        
-
-           <!-- Navigation & Logo-->
-        <div class="mainmenu-wrapper">
-	        <div class="container">
-	        	<!--<div class="menuextras">
-					<div class="extras">
-						<ul>
-							<li class="shopping-cart-items"><i class="glyphicon glyphicon-shopping-cart icon-white"></i> <a href="page-shopping-cart.html"><b>3 items</b></a></li>
-							<li>
-								<div class="dropdown choose-country">
-									<a class="#" data-toggle="dropdown" href="#"><img src="img/flags/gb.png" alt="Great Britain"> UK</a>
-									<ul class="dropdown-menu" role="menu">
-										<li role="menuitem"><a href="#"><img src="img/flags/us.png" alt="United States"> US</a></li>
-										<li role="menuitem"><a href="#"><img src="img/flags/de.png" alt="Germany"> DE</a></li>
-										<li role="menuitem"><a href="#"><img src="img/flags/es.png" alt="Spain"> ES</a></li>
-									</ul>
-								</div>
-							</li>
-			        		<li><a href="page-login.html">Login</a></li>
-			        	</ul>
-					</div>
-		        </div>-->
-		        <nav id="mainmenu" class="mainmenu">
-					<ul>
-						<li class="logo-wrapper"><a href="index.html"><img src="img/website_logo.jpg" alt="Multipurpose Twitter Bootstrap Template"></a></li>
-						<li class="active">
-							<a href="index.html">Home</a>
-						</li>
-						<li>
-							<a href="page-Research.html">Research</a>
-						</li>
-						<li>
-							<a href="page_research_team.html">Research Team </a>
-						</li>
-						<li>
-							<a href="page-publication.html">Publication </a>
-						</li>
-						<li>
-							<a href="page-project-funding.html">Funding </a>
-						</li>
-							</div><!-- /mainmenu-submenu -->
-						</li>
-					</ul>
-				</nav>
-			</div>
-		</div>
-
-        <!-- Page Title -->
-		<div class="section section-breadcrumbs">
-			<div class="container">
-				<div class="row">
-					<div class="col-md-12">
-						<h1>Research Projects</h1>
-					</div>
-				</div>
-			</div>
-		</div>
-        
-        <div class="section">
-	    	<div class="container">
-				<div class="row">
-					<!--project 1-->
-					<div class="col-sm-6">
-						<div class="portfolio-item">
-							<div class="portfolio-image">
-								<a href="page-portfolio-item.html"><img src="img/Resize_image/cyber_physical_system/Research_detail_1.jpg" alt="Project Name"></a>
-							</div>
-							<div class="portfolio-info-fade">
-								<ul>
-									<li class="portfolio-project-name">Cyber-Physical Systems </li>
-									<li>Fundamental limitations for control of dynamical systems over networks:</li>
-									<p class="text-justify">We have discovered a systematic framework for analyzing and designing network-controlled systems in the presence of uncertainty. 
-									 </p>
-									 <li>Control and optimization over uncertainty networks:
-										</li>
-									 <p class="text-justify">The main contribution of this work is to understand fundamental tradeoffs that arise in the control of linear and nonlinear dynamical systems over networks in the presence of uncertainty.</p>
-									<li class="read-more"><a href="page-project-details-1.html" class="btn">Read more</a></li>
-								</ul>
-							</div>
-						</div>
-					</div>
-					<!--Project 1 end-->
-					<!--Project 2 Start-->
-					<div class="col-sm-6">
-						<div class="portfolio-item">
-							<div class="portfolio-image">
-								<a href="page-portfolio-item.html"><img src="img/Resize_image/off_road_autonomy/Research_detail_2.jpg" alt="Project Name"></a>
-							</div>
-							<div class="portfolio-info-fade">
-								<ul>
-									<li class="portfolio-project-name">Off-road Autonomy and Robotics </li>
-									<br>
-									<p class="text-justify">This research focuses on developing a systematic data-driven analytical and computational framework for the navigation of autonomous vehicles in the off-road environment. 
-									   The data-driven tools are based on linear operator theory involving Koopman and Perron-Frobenius operators. 
-									   The developed framework is tested on an experimental platform consisting of an F1TENTH vehicle, 1/5th scale Hunter SE. 
-									   We are currently implementing the framework for full-scale Warthog and MRZR vehicles. </p>
-									<li class="read-more"><a href="page-project-details-2.html" class="btn">Read more</a></li>
-								</ul>
-							</div>
-						</div>
-					</div>
-					<!--Project 2 End-->
-					<!--Project 3 Start-->
-					<div class="col-sm-6">
-						<div class="portfolio-item">
-							<div class="portfolio-image">
-								<a href="page-portfolio-item.html"><img src="img/Resize_image/power_system/Research_detail_3.png" alt="Project Name"></a>
-							</div>
-							<div class="portfolio-info-fade">
-								<ul>
-									<li class="portfolio-project-name">Network Power System </li>
-									
-									<p class="text-justify">In applications involving network power systems, our research work is focused on a couple of different problems, 
-										which include real-time stability monitoring, stochastic stability and performance analysis of power systems in the presence of uncertain renewable, 
-										robust distributed optimization of a distributed system, data-driven analytics involving linear operator theoretic methods for reduced order modeling, and cyber security of power grid. 
-										We have discovered data-driven methods based on the dynamical system theory for the real-time rotor angle and power system voltage stability monitoring using time-series data from 
-										Phasor Measurement Units (PMUs). </p>
-									<li class="read-more"><a href="page-project-details-3.html" class="btn">Read more</a></li>
-								</ul>
-							</div>
-						</div>
-					</div>
-					<!--Project 3 End-->
-					<!--Project 4-->
-					<div class="col-sm-6">
-						<div class="portfolio-item">
-							<div class="portfolio-image">
-								<a href="page-portfolio-item.html"><img src="img/Resize_image/operator_theoretic_methods/Research_detail_4.png" alt="Project Name"></a>
-							</div>
-							<div class="portfolio-info-fade">
-								<ul>
-									<li class="portfolio-project-name">Operator theoretic methods for data-driven analysis and control of dynamical systems</li>
-									<li>Duality in stability and control from linear operator perspective:</li>
-									<p class="text-justify">We have introduced novel operator theoretical methods for stability analysis and optimal control design for dynamical systems.
-								     </p>
-									<li>Spectral Koopman methods for analysis and control:</li>
-									<p class="text-justify">The proposed research aims to discover methods based on the spectral analysis of the Koopman operator for the data-driven analysis and synthesis of nonlinear systems. 
-									</p>
-									<li class="read-more"><a href="page-project-details-4.html" class="btn">Read more</a></li>
-								</ul>
-							</div>
-						</div>
-					</div>
-					<!--Project 4 End-->
-					<!--Project 5-->
-					<div class="col-sm-6">
-						<div class="portfolio-item">
-							<div class="portfolio-image">
-								<a href="page-portfolio-item.html"><img src="img/Resize_image/information_flow/Research_detail_5.png" alt="Project Name"></a>
-							</div>
-							<div class="portfolio-info-fade">
-								<ul>
-									<li class="portfolio-project-name">Information Flow and Control Over Networks </li>
-									<li>Information-based causality measure in a dynamical system:</li>
-									<p class="text-justify">Information flow and causality are the most fundamental concepts for analyzing and designing various engineering and natural sciences systems. 
-									</p>
-									<li>Control of information flow over networks:</li>
-									<p class="text-justify">Information flow among nodes in a complex network describes the overall cause-effect relationships among the nodes.
-										 It provides a better understanding of the contributions of these nodes, individually or collectively, towards the underlying network dynamics.</p>
-									<li class="read-more"><a href="page-project-details-5.html" class="btn">Read more</a></li>
-								</ul>
-							</div>
-						</div>
-					</div>
-					<!--Project 5 End-->
-					
-				</div>
-			</div>
-		</div>
-
-	    <!-- Footer -->
-	     <!-- Footer -->
-		 <div class="footer">
-	    	<div class="container">
-		    	<div class="row">
-		    		<div class="col-footer col-md-3 col-xs-6">
-		    			<h3>Contacts</h3>
-		    			<p class="contact-us-details">
-	        				<b>Address:</b> 233 Flour Daniel Innovation Building
-							Department of Mechanical Engineering
-							Clemson University
-							Clemson SC, 29634<br/>
-	        			<!--	<b>Phone:</b> +44 123 654321<br/>
-	        				<b>Fax:</b> +44 123 654321<br/>-->
-	        				<b>Email:</b> <a style="color: #D56E1D;">uvaidya@clemson.edu</a>
-		    		</div>
-		
-		    		<div class="col-footer col-md-4 col-xs-6">
-		    			
-	        			</p>
-		    		</div>
-		    		<div class="col-footer col-md-2 col-xs-6">
-		    			<h3>Stay Connected</h3>
-		    			<ul class="footer-stay-connected no-list-style">
-		    				<!--<li><a href="#" class="facebook"></a></li>
-		    				<li><a href="#" class="twitter"></a></li>-->
-		    				<li><a href="https://www.researchgate.net/profile/Umesh-Vaidya-3" target="_blank" class="googleplus"></a></li>
-		    			</ul>
-		    		</div>
-		    	</div>
-		    	<div class="row">
-		    		<div class="col-md-12">
-		    			<div class="footer-copyright">&copy; 2025 DyCo AI Lab. All rights reserved.</div>
-		    		</div>
-		    	</div>
-		    </div>
-	    </div>
-        <!-- Javascripts -->
-        <script src="http://ajax.googleapis.com/ajax/libs/jquery/1.9.1/jquery.min.js"></script>
-        <script>window.jQuery || document.write('<script src="js/jquery-1.9.1.min.js"><\/script>')</script>
-        <script src="js/bootstrap.min.js"></script>
-        <script src="http://cdn.leafletjs.com/leaflet-0.5.1/leaflet.js"></script>
-        <script src="js/jquery.fitvids.js"></script>
-        <script src="js/jquery.sequence-min.js"></script>
-        <script src="js/jquery.bxslider.js"></script>
-        <script src="js/main-menu.js"></script>
-        <script src="js/template.js"></script>
-
-    </body>
+    <section class="application-band section" id="application-research" aria-labelledby="applications-title">
+      <div class="container">
+        <div class="section-heading">
+          <div><p class="eyebrow">From foundations to practice</p><h2 id="applications-title">Application Research</h2></div>
+        </div>
+        <div class="research-card-grid applications-grid">
+          <article class="research-card" aria-labelledby="robotics-title">
+            <div class="research-card-image">
+              <img src="img/homepage/off-road-quadruped.png" alt="A quadruped robot walking across wet gravel" width="1448" height="1086" loading="lazy">
+            </div>
+            <div class="research-card-content">
+              <h3 id="robotics-title">Off-road Autonomy and Robotics</h3>
+              <p>We develop terrain-aware models, safety-constrained planning, and Koopman-based model predictive control for wheeled vehicles and quadruped robots navigating challenging environments.</p>
+              <a class="text-link" href="page-project-details-2.html" aria-label="Explore Research: Off-road Autonomy and Robotics">Explore Research <span aria-hidden="true">&rarr;</span></a>
+            </div>
+          </article>
+          <article class="research-card" aria-labelledby="power-title">
+            <div class="research-card-image">
+              <img src="img/homepage/predictive-power-system-security.png" alt="Power-system workflow connecting local dynamic prediction, security assessment, and coordinated frequency support" width="1774" height="887" loading="lazy">
+            </div>
+            <div class="research-card-content">
+              <h3 id="power-title">Power and Energy Systems</h3>
+              <p>Using phasor measurement unit data and operator-theoretic models, we study grid stability, uncertainty from renewable generation, robust optimal power flow, and distributed voltage control.</p>
+              <a class="text-link" href="page-project-details-3.html" aria-label="Explore Research: Power and Energy Systems">Explore Research <span aria-hidden="true">&rarr;</span></a>
+            </div>
+          </article>
+          <article class="research-card" aria-labelledby="cyber-title">
+            <div class="research-card-image">
+              <img src="img/Resize_image/cyber_physical_system/Research_detail_1.jpg" alt="Feedback block diagrams for a networked dynamical system with communication uncertainty" width="600" height="400" loading="lazy">
+            </div>
+            <div class="research-card-content">
+              <h3 id="cyber-title">Cyber-Physical Systems</h3>
+              <p>We investigate estimation and stabilization over uncertain communication channels, robust synchronization, and distributed optimization, connecting system dynamics and network topology to achievable performance.</p>
+              <a class="text-link" href="page-project-details-1.html" aria-label="Explore Research: Cyber-Physical Systems">Explore Research <span aria-hidden="true">&rarr;</span></a>
+            </div>
+          </article>
+        </div>
+      </div>
+    </section>
+  </main>
+  <footer id="contact" class="site-footer">
+    <div class="container footer-grid">
+      <div><h2>DyCoAI Laboratory</h2><p>Dynamics and Control for<br>Autonomy and Intelligence</p><p class="footer-affiliation">Clemson University</p></div>
+      <div><h3>Visit</h3><address>125A Flour Daniel Innovation Building<br>Department of Mechanical Engineering<br>Clemson University<br>Clemson, SC 29634</address></div>
+      <div><h3>Connect</h3><a href="mailto:uvaidya@clemson.edu">uvaidya@clemson.edu</a><a href="https://www.researchgate.net/profile/Umesh-Vaidya-3">ResearchGate <span aria-hidden="true">&nearr;</span></a><a href="https://scholar.google.com/citations?user=bzUVrKIAAAAJ&amp;hl=en">Google Scholar <span aria-hidden="true">&nearr;</span></a><a href="page-project-funding.html">Funding &amp; collaborators <span aria-hidden="true">&rarr;</span></a></div>
+    </div>
+    <div class="container footer-bottom"><span>&copy; 2026 DyCoAI Laboratory</span><a href="#main">Back to top <span aria-hidden="true">&uarr;</span></a></div>
+  </footer>
+</body>
 </html>
