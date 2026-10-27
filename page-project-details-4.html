@@ -1,299 +1,219 @@
-<!DOCTYPE html>
-<!--[if lt IE 7]>      <html class="no-js lt-ie9 lt-ie8 lt-ie7"> <![endif]-->
-<!--[if IE 7]>         <html class="no-js lt-ie9 lt-ie8"> <![endif]-->
-<!--[if IE 8]>         <html class="no-js lt-ie9"> <![endif]-->
-<!--[if gt IE 8]><!--> <html class="no-js"> <!--<![endif]-->
-    <head>
-        <meta charset="utf-8">
-        <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
-		<title>DyCo AI</title>
-        <meta name="description" content="">
-        <meta name="viewport" content="width=device-width">
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="description" content="Operator-theoretic research at DyCoAI: Lyapunov measures, density-based optimal control, Koopman spectral methods, and Hamilton-Jacobi theory for nonlinear systems.">
+  <meta name="theme-color" content="#522d80">
+  <title>Operator-Theoretic Methods | DyCoAI Laboratory</title>
+  <link rel="stylesheet" href="css/home.css">
+  <script src="js/home.js" defer></script>
+  <style>
+    .operator-page .operator-intro { padding: 46px 0 48px; background: var(--soft); border-bottom: 1px solid var(--line); }
+    .operator-page .breadcrumb { margin-bottom: 24px; font-size: 14px; color: var(--purple); }
+    .operator-page .operator-intro h1 { max-width: 1000px; font-size: 42px; line-height: 1.2; }
+    .operator-page .operator-subtitle { max-width: 940px; margin-top: 22px; font-size: 24px; line-height: 1.45; color: var(--muted); }
+    .operator-page .operator-section { padding-block: 56px; }
+    .operator-page .operator-section h2 { font-size: 30px; margin-bottom: 24px; }
+    .operator-page .reading-width { max-width: 880px; }
+    .operator-page .operator-overview p { color: var(--muted); }
+    .operator-page .operator-definitions { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 32px; margin: 30px 0 0; }
+    .operator-page .operator-definitions > div { border-left: 3px solid var(--orange); padding-left: 20px; }
+    .operator-page .operator-definitions dt { font-size: 18px; font-weight: 600; }
+    .operator-page .operator-definitions dd { margin: 8px 0 0; font-size: 15px; color: var(--muted); }
+    .operator-page .directions-band { border-block: 1px solid var(--line); }
+    .operator-page .direction-grid { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 40px 52px; }
+    .operator-page .research-direction { border-top: 2px solid var(--orange); padding-top: 20px; min-width: 0; scroll-margin-top: 24px; }
+    .operator-page .research-direction h3 { font-size: 23px; line-height: 1.35; margin-bottom: 16px; }
+    .operator-page .research-direction p:not(.eyebrow) { font-size: 16px; color: var(--muted); }
+    .operator-page .research-direction .text-links { margin-top: 18px; }
+    .operator-page .ongoing-research { margin-top: 42px; border-left: 3px solid var(--purple); padding-left: 24px; max-width: 920px; }
+    .operator-page .ongoing-research h3 { font-size: 21px; margin-bottom: 12px; }
+    .operator-page .ongoing-research p:not(.eyebrow) { font-size: 16px; color: var(--muted); }
+    .operator-page .figures-band { background: var(--soft); border-bottom: 1px solid var(--line); }
+    .operator-page .figure-grid { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 36px 32px; }
+    .operator-page figure { margin: 0; min-width: 0; }
+    .operator-page .scientific-image { display: flex; align-items: center; justify-content: center; width: 100%; aspect-ratio: 3 / 2; background: #fff; padding: 12px; border: 1px solid var(--line); }
+    .operator-page .scientific-image img { width: 100%; height: 100%; object-fit: contain; }
+    .operator-page figcaption { padding-top: 18px; }
+    .operator-page figcaption h3 { font-size: 20px; margin-bottom: 10px; }
+    .operator-page figcaption p:not(.eyebrow) { color: var(--muted); font-size: 15px; }
+    .operator-page figcaption .text-links { margin-top: 12px; gap: 8px 24px; }
+    .operator-page .publication-groups { display: grid; grid-template-columns: 210px minmax(0, 1fr); gap: 28px 46px; }
+    .operator-page .publication-group-heading { padding-top: 22px; border-top: 2px solid var(--orange); }
+    .operator-page .publication-group-heading h3 { font-size: 22px; line-height: 1.35; }
+    .operator-page .reference-list { list-style: none; padding: 0; margin: 0; border-top: 1px solid var(--line); }
+    .operator-page .reference-list > li { padding-block: 20px; border-bottom: 1px solid var(--line); scroll-margin-top: 24px; }
+    .operator-page .citation { font-size: 15px; line-height: 1.65; overflow-wrap: anywhere; }
+    .operator-page .citation cite { font-style: normal; font-weight: 600; }
+    .operator-page .reference-status { color: var(--purple); font-size: 12px; font-weight: 600; margin: 0 0 7px; }
+    .operator-page .reference-links { display: flex; flex-wrap: wrap; gap: 8px 22px; margin-top: 8px; }
+    .operator-page .reference-links a { color: var(--purple); font-size: 13px; padding-block: 4px; text-decoration: underline; text-underline-offset: 3px; }
+    .operator-page .reference-note { font-size: 13px; color: var(--muted); margin-top: 10px; }
+    .operator-page .reference-note summary { cursor: pointer; width: fit-content; }
+    .operator-page .reference-note p { margin-top: 8px; }
+    .operator-page .reference-note a { color: var(--purple); text-decoration: underline; }
+    .operator-page summary:focus-visible { outline: 3px solid var(--purple); outline-offset: 4px; }
+    .operator-page .research-return { border-top: 1px solid var(--line); padding-block: 28px; }
+    @media (max-width: 850px) {
+      .operator-page .direction-grid { gap: 32px; }
+      .operator-page .publication-groups { grid-template-columns: 1fr; gap: 18px; }
+      .operator-page .publication-group-heading:not(:first-child) { margin-top: 20px; }
+      .operator-page .figure-grid { gap: 30px 24px; }
+    }
+    @media (max-width: 600px) {
+      .operator-page .operator-intro { padding-block: 32px; }
+      .operator-page .operator-intro h1 { font-size: 32px; overflow-wrap: break-word; }
+      .operator-page .operator-subtitle { font-size: 21px; }
+      .operator-page .operator-section { padding-block: 38px; }
+      .operator-page .operator-section h2 { font-size: 27px; }
+      .operator-page .operator-definitions, .operator-page .direction-grid, .operator-page .figure-grid { grid-template-columns: 1fr; }
+      .operator-page .research-direction h3 { font-size: 22px; }
+      .operator-page .ongoing-research { padding-left: 18px; }
+      .operator-page .scientific-image { padding: 8px; }
+    }
+    @media print {
+      .operator-page .site-header, .operator-page .site-footer, .operator-page .operator-jumps { display: none; }
+      .operator-page figure, .operator-page .reference-list > li { break-inside: avoid; }
+    }
+  </style>
+</head>
+<body class="operator-page">
+  <a class="skip-link" href="#main">Skip to content</a>
+  <header class="site-header">
+    <div class="container header-inner">
+      <a class="brand" href="index.html" aria-label="DyCoAI Laboratory home">
+        <img src="img/website_logo.jpg" alt="DyCoAI Laboratory" width="200" height="55">
+        <span class="brand-affiliation">Clemson University</span>
+      </a>
+      <button class="menu-toggle" type="button" aria-expanded="false" aria-controls="primary-navigation" aria-label="Open navigation" hidden><span aria-hidden="true" class="menu-symbol"></span></button>
+      <nav id="primary-navigation" aria-label="Main navigation">
+        <a href="index.html">Home</a><a href="page-Research.html" aria-current="true">Research</a><a href="index.html#projects">Projects</a><a href="page_research_team.html">People</a><a href="page-publication.html">Publications</a><a href="index.html#news">News</a><a href="#contact">Contact</a>
+      </nav>
+    </div>
+  </header>
+  <main id="main">
+    <section class="operator-intro" aria-labelledby="operator-title">
+      <div class="container">
+        <p class="breadcrumb"><a href="page-Research.html">Research</a> <span aria-hidden="true">/</span> Foundational Research</p>
+        <h1 id="operator-title">Operator-Theoretic Methods for Dynamical Systems</h1>
+        <p class="operator-subtitle">Linear Operator Perspectives on Nonlinear Dynamics, Stability, Optimal Control, and Safety</p>
+        <div class="text-links operator-jumps">
+          <a href="#overview">Research Overview</a><a href="#directions">Research Directions</a><a href="#highlights">Scientific Figures</a><a href="#selected-publications">Selected Publications</a>
+        </div>
+      </div>
+    </section>
 
-        <link rel="stylesheet" href="css/bootstrap.min.css">
-        <link rel="stylesheet" href="css/icomoon-social.css">
-        <link href='http://fonts.googleapis.com/css?family=Open+Sans:400,700,600,800' rel='stylesheet' type='text/css'>
+    <section id="overview" class="operator-section operator-overview container" aria-labelledby="overview-title">
+      <div class="reading-width">
+        <h2 id="overview-title">Research Overview</h2>
+        <p>Nonlinear trajectories can be studied through linear evolution in spaces of functions and measures. At DyCoAI, we use this operator perspective to connect dynamical-systems theory with computational methods for stability, feedback design, optimal control, and safety.</p>
+        <p>Our contributions include Lyapunov measures for almost-everywhere stability, convex control formulations in the space of densities, and spectral Koopman methods for approximating nonlinear control problems. A central goal is to connect these mathematical constructions with finite-dimensional, data-driven computations while accounting for approximation error and the information available in finite data.</p>
+      </div>
+      <dl class="operator-definitions">
+        <div><dt>Koopman operator</dt><dd>Evolves observables: functions of the system state. Its spectral structure provides coordinates for studying nonlinear dynamics and their geometry.</dd></div>
+        <div><dt>Perron&ndash;Frobenius operator</dt><dd>Transports measures or densities of ensembles of states. Its duality with the Koopman operator connects function-based and measure-based analysis.</dd></div>
+      </dl>
+    </section>
 
-        <link rel="stylesheet" href="css/leaflet.css" />
-		<!--[if lte IE 8]>
-		    <link rel="stylesheet" href="css/leaflet.ie.css" />
-		<![endif]-->
-		<link rel="stylesheet" href="css/main-orange.css">
+    <section id="directions" class="operator-section directions-band" aria-labelledby="directions-title">
+      <div class="container">
+        <h2 id="directions-title">Research Directions</h2>
+        <div class="direction-grid">
+          <article id="linear-operators" class="research-direction">
+            <p class="eyebrow">01 / Operator foundations</p>
+            <h3>Linear Operator Perspectives on Nonlinear Dynamics</h3>
+            <p>We move from individual nonlinear trajectories to the linear evolution of observables and distributions. The Koopman and Perron&ndash;Frobenius operators describe complementary aspects of the same dynamics, generally in infinite-dimensional spaces.</p>
+            <p>This dual perspective underlies our work on deterministic and stochastic stability. Finite-dimensional approximations make these ideas computationally useful, but their conclusions must be interpreted within the assumptions and resolution of the approximation.</p>
+            <div class="text-links"><a href="#ref-measure">Lyapunov measures</a><a href="#ref-continuous">Continuous-time stability</a></div>
+          </article>
+          <article id="stability-control" class="research-direction">
+            <p class="eyebrow">02 / Stability and synthesis</p>
+            <h3>Stability Analysis and Convex Optimal Control</h3>
+            <p>Our published work introduces Lyapunov measures as a dual counterpart to Lyapunov functions for verifying almost-everywhere stability of attractor sets. Set-oriented approximations lead to linear-programming-based methods for computing these measures and designing stabilizing feedback.</p>
+            <p>We extend this perspective to convex density-based formulations of nonlinear optimal control, including stochastic problems with safety constraints. Data-driven approximations of transfer operators connect the infinite-dimensional formulation to finite-dimensional optimization.</p>
+            <div class="text-links"><a href="#ref-optimal">Optimal stabilization</a><a href="#ref-convex">Data-driven optimal control</a></div>
+          </article>
+          <article id="spectral-modeling" class="research-direction">
+            <p class="eyebrow">03 / Spectrum and computation</p>
+            <h3>Spectral Koopman Methods and Data-Driven Modeling</h3>
+            <p>Koopman eigenfunctions encode dynamical information beyond a local state-space linearization. Under appropriate spectral and regularity assumptions, their level sets characterize invariant geometry, including stable and unstable manifolds.</p>
+            <p>Our published path-integral construction computes principal eigenfunctions from trajectory integrals and supports neural-network approximation. We also investigate reproducing kernel Hilbert space (RKHS) methods and approaches inspired by statistical mechanics, with an emphasis on useful approximations for analysis and feedback design.</p>
+            <div class="text-links"><a href="#ref-path-integral">Path-integral eigenfunctions</a><a href="#ref-feedback">Feedback stabilization</a></div>
+          </article>
+          <article id="hamilton-jacobi" class="research-direction">
+            <p class="eyebrow">04 / Value functions and safety</p>
+            <h3>Hamilton&ndash;Jacobi Theory, Reachability, and Safety</h3>
+            <p>Our published Koopman&ndash;Hamilton&ndash;Jacobi connection relates spectral analysis to Lagrangian submanifolds and the approximation of Hamilton&ndash;Jacobi solutions. This provides a route from operator eigenfunctions to value functions and nonlinear optimal control.</p>
+            <p>The spectral Koopman&ndash;Hopf work, listed as accepted for CDC 2026, extends this direction to adversarial reachability. It uses projected control and disturbance directions and Hamiltonian bounds to approximate value functions and backward reachable sets; these are approximation results under stated assumptions, not unrestricted safety guarantees.</p>
+            <div class="text-links"><a href="#ref-hamilton-jacobi">Koopman meets Hamilton and Jacobi</a><a href="#ref-hopf">Adversarial reachability</a></div>
+          </article>
+        </div>
+        <aside class="ongoing-research" aria-labelledby="ongoing-title">
+          <p class="eyebrow">Ongoing research / Under review</p>
+          <h3 id="ongoing-title">From Data to Certificates</h3>
+          <p>The D2C preprint investigates Koopman supereigenfunctions: inequality-based growth envelopes intended to certify stability, safety, and uncertainty propagation directly from trajectory data. This work is under review and is distinct from the published results above. Continuing research also addresses finite-data accuracy and scalable approximations for nonlinear control.</p>
+          <div class="text-links"><a href="papers/data-to-certificates-d2c-koopman-supereigenfunctions.pdf">D2C preprint (PDF)</a><a href="page-publication.html#under_review_2026_002">Abstract &amp; citation</a></div>
+        </aside>
+      </div>
+    </section>
 
-        <script src="js/modernizr-2.6.2-respond-1.1.0.min.js"></script>
-    </head>
-    <body>
-        <!--[if lt IE 7]>
-            <p class="chromeframe">You are using an <strong>outdated</strong> browser. Please <a href="http://browsehappy.com/">upgrade your browser</a> or <a href="http://www.google.com/chromeframe/?redirect=true">activate Google Chrome Frame</a> to improve your experience.</p>
-        <![endif]-->
-        
+    <section id="highlights" class="operator-section figures-band" aria-labelledby="highlights-title">
+      <div class="container">
+        <h2 id="highlights-title">Research Highlights and Scientific Figures</h2>
+        <!-- Legacy figures lack paper-level provenance. Related-work links do not assert figure attribution. -->
+        <div class="figure-grid">
+          <figure>
+            <a class="scientific-image" href="img/Resize_image/operator_theoretic_methods/Research_detail_4.png" aria-label="View full-size operator spectrum figure"><img src="img/Resize_image/operator_theoretic_methods/Research_detail_4.png" width="600" height="400" loading="lazy" alt="Red spectral points in the complex plane, plotted against a blue unit-circle reference."></a>
+            <figcaption><p class="eyebrow">Linear operator perspectives</p><h3>Spectrum as a dynamical signature</h3><p>A spectrum plot from the laboratory's original research page, with a unit-circle reference. Spectral representations provide a complementary view of dynamics to state-space trajectories.</p><div class="text-links"><a href="#linear-operators">Research direction</a><a href="img/Resize_image/operator_theoretic_methods/Research_detail_4.png">Full-size figure <span aria-hidden="true">&nearr;</span></a></div></figcaption>
+          </figure>
+          <figure>
+            <a class="scientific-image" href="img/Resize_image/operator_theoretic_methods/van-der-pol-lyapunov-measure.png" aria-label="View full-size Van der Pol Lyapunov measure figure"><img src="img/Resize_image/operator_theoretic_methods/van-der-pol-lyapunov-measure.png" width="1448" height="1086" loading="lazy" alt="Lyapunov-measure heatmap for the Van der Pol oscillator in the x1-x2 state plane, with a black limit-cycle contour and a color scale from 0 to 2 times 10 to the minus 3."></a>
+            <figcaption><p class="eyebrow">Stability analysis</p><h3>Lyapunov measure for the Van der Pol oscillator</h3><p>A state-space heatmap of the Lyapunov measure with the oscillator's limit cycle overlaid in black. Lyapunov measures support almost-everywhere stability analysis of attractor sets.</p><div class="text-links"><a href="#ref-measure">Related publication</a><a href="img/Resize_image/operator_theoretic_methods/van-der-pol-lyapunov-measure.png">Full-size figure <span aria-hidden="true">&nearr;</span></a></div></figcaption>
+          </figure>
+          <figure>
+            <a class="scientific-image" href="img/Resize_image/operator_theoretic_methods/duffing_heatmaps_dynamics_no_caption.png" aria-label="View full-size Duffing oscillator control-design figure"><img src="img/Resize_image/operator_theoretic_methods/duffing_heatmaps_dynamics_no_caption.png" width="2048" height="555" loading="lazy" alt="Koopman eigenfunction heatmaps for the Duffing oscillator alongside time histories and phase-plane trajectories, comparing solid blue closed-loop responses with dashed red open-loop responses."></a>
+            <figcaption><p class="eyebrow">Control design</p><h3>Koopman-based control of the Duffing oscillator</h3><p>Left: Koopman eigenfunctions for the Duffing oscillator with &lambda;<sub>1</sub> = 1 and &lambda;<sub>2</sub> = 0.93. Right: closed-loop (solid blue) and open-loop (dashed red) trajectories, shown as time histories and a phase-plane comparison.</p><div class="text-links"><a href="#ref-feedback">Related publication</a><a href="img/Resize_image/operator_theoretic_methods/duffing_heatmaps_dynamics_no_caption.png">Full-size figure <span aria-hidden="true">&nearr;</span></a></div></figcaption>
+          </figure>
+          <figure>
+            <a class="scientific-image" href="img/Resize_image/operator_theoretic_methods/duffing_flow_lyapunov_no_caption.png" aria-label="View full-size Duffing eigenfunctions and state-space geometry figure"><img src="img/Resize_image/operator_theoretic_methods/duffing_flow_lyapunov_no_caption.png" width="1308" height="1000" loading="lazy" alt="Four Duffing oscillator panels: a real Koopman eigenfunction with flow lines, its zero level set highlighting the stable manifold, the magnitude of a complex eigenfunction, and a three-dimensional Lyapunov function landscape."></a>
+            <figcaption><p class="eyebrow">Spectral Koopman methods</p><h3>Koopman eigenfunctions and state-space geometry</h3><p>Duffing oscillator: (a) a real eigenfunction for &lambda; = 0.78 at (0, 0); (b) its zero level set representing the stable manifold; (c) the magnitude of a complex eigenfunction for &lambda; = &minus;0.25 &plusmn; 1.39j at (1, 0); and (d) a Lyapunov function obtained from (c).</p><div class="text-links"><a href="#ref-path-integral">Related publication</a><a href="img/Resize_image/operator_theoretic_methods/duffing_flow_lyapunov_no_caption.png">Full-size figure <span aria-hidden="true">&nearr;</span></a></div></figcaption>
+          </figure>
+        </div>
+      </div>
+    </section>
 
-           <!-- Navigation & Logo-->
-        <div class="mainmenu-wrapper">
-	        <div class="container">
-	        	<!--<div class="menuextras">
-					<div class="extras">
-						<ul>
-							<li class="shopping-cart-items"><i class="glyphicon glyphicon-shopping-cart icon-white"></i> <a href="page-shopping-cart.html"><b>3 items</b></a></li>
-							<li>
-								<div class="dropdown choose-country">
-									<a class="#" data-toggle="dropdown" href="#"><img src="img/flags/gb.png" alt="Great Britain"> UK</a>
-									<ul class="dropdown-menu" role="menu">
-										<li role="menuitem"><a href="#"><img src="img/flags/us.png" alt="United States"> US</a></li>
-										<li role="menuitem"><a href="#"><img src="img/flags/de.png" alt="Germany"> DE</a></li>
-										<li role="menuitem"><a href="#"><img src="img/flags/es.png" alt="Spain"> ES</a></li>
-									</ul>
-								</div>
-							</li>
-			        		<li><a href="page-login.html">Login</a></li>
-			        	</ul>
-					</div>
-		        </div>-->
-		        <nav id="mainmenu" class="mainmenu">
-					<ul>
-						<li class="logo-wrapper"><a href="index.html"><img src="img/website_logo.jpg" alt="Multipurpose Twitter Bootstrap Template"></a></li>
-						<li class="active">
-							<a href="index.html">Home</a>
-						</li>
-						<li>
-							<a href="page-Research.html">Research</a>
-						</li>
-						<li>
-							<a href="page_research_team.html">Research Team </a>
-						</li>
-						<li>
-							<a href="page-publication.html">Publication </a>
-						</li>
-						<li>
-							<a href="page-project-funding.html">Funding </a>
-						</li>
-							</div><!-- /mainmenu-submenu -->
-						</li>
-					</ul>
-				</nav>
-			</div>
-		</div>
-
-
-        <!-- Page Title -->
-		<div class="section section-breadcrumbs">
-			<div class="container">
-				<div class="row">
-					<div class="col-md-12">
-						<h1>Research Details</h1>
-					</div>
-				</div>
-			</div>
-		</div>
-		<div class="section">
-	    	<div class="container">
-				<div class="row">
-
-					<!-- Project Info Column -->
-					<div class="portfolio-item-description col-sm-6">
-						<h2>Operator Theoretic Methods for Data-Driven Analysis and Control of Dynamical Systems</h2>
-						<h3>Duality in stability and control from linear operator perspective:</h3>
-						<p class="text-justify">
-							We have introduced novel operator theoretical methods for stability analysis and optimal control design for dynamical systems. 
-							The transformative idea we proposed is to shift the focus from the point-wise nonlinear evolution of dynamical systems on the finite-dimensional state space to ensemble linear evolution of functions on 
-							infinite dimensional space. With every nonlinear dynamical system, one can associate two linear operators called Perron-Frobenius (P-F) and Koopman operators. <br>
-						</p>
-
-					</div><!-- End Project Info Column -->
-					<!-- Image Column -->
-					<div class="col-sm-5">
-						<div class="portfolio-item">
-							<div id="carouselExample" class="carousel slide" data-ride="carousel">
-								<ol class="carousel-indicators">
-								  <li data-target="#carouselExample" data-slide-to="0" class="active"></li>
-								  <li data-target="#carouselExample" data-slide-to="1"></li>
-								  <li data-target="#carouselExample" data-slide-to="2"></li>
-								  <li data-target="#carouselExample" data-slide-to="3"></li>
-								  <li data-target="#carouselExample" data-slide-to="4"></li>
-								  <li data-target="#carouselExample" data-slide-to="5"></li>
-								</ol>
-								<div class="carousel-inner">
-								  <div class="item active ">
-									<img src="img/Resize_image/operator_theoretic_methods/Research_detail_4.png" alt="Image 1" class="img-responsive ">
-								  </div>
-								  <div class="item">
-									<img src="img/Resize_image/operator_theoretic_methods/PD_4.1.png" alt="Image 2" class="img-responsive">
-								  </div>
-								  <div class="item">
-									<img src="img/Resize_image/operator_theoretic_methods/PD_4.2.png" alt="Image 3" class="img-responsive">
-								  </div>
-								  <div class="item">
-									<img src="img/Resize_image/operator_theoretic_methods/PD_4.3.png" alt="Image 4" class="img-responsive">
-								  </div>
-								  <div class="item">
-									<img src="img/Resize_image/operator_theoretic_methods/PD_4.4.png" alt="Image 5" class="img-responsive">
-								  </div>
-								  <div class="item">
-									<img src="img/Resize_image/operator_theoretic_methods/PD_4.5.png" alt="Image 6" class="img-responsive">
-								  </div>
-								</div>
-								
-							  </div>
-						</div>
-						
-					</div>
-					  <!-- End Image Column -->   
-					<!-- Project Info Column -->
-					<div class="col-sm-11">
-						<p class="text-justify">
-							Both these operators provide for the linear 
-							description of nonlinear dynamics in the space of densities.
-							 This linear description of nonlinear dynamics can be effectively used to analyze and control a nonlinear system.n particular, using a linear transfer P-F operator, 
-							 we introduce the Lyapunov measure as a new tool for verifying weaker set-theoretic notions of almost everywhere stability. The Lyapunov measure is shown to be dual to the Lyapunov function. 
-							 Unlike the Lyapunov function, systematic linear programming-based computational methods are proposed to compute the Lyapunov measure.
-						</p>
-						<p class="text-justify">
-							This duality in stability theory between the Lyapunov function and the Lyapunov measure also extends to the optimal control of deterministic and stochastic systems. This duality leads to a convex 
-							formulation of optimal control problems in the dual space of densities. These duality results, combined with the data-driven methods discovered for the finite-dimensional approximation of linear operators,
-							 are employed to design data-driven optimal control of nonlinear systems. This proposed research aims to find a 
-							comprehensive analytical and computational framework for the data-driven control of a dynamical system that explicitly accounts for the finite amount of data available for control.
-						</p>
-					</div>
-					<!-- End Project Info Column -->
-				</div>	
-				<!-- End Related Projects -->
-			</div>
-		</div>
-        
-		<div class="section">
-	    	<div class="container">
-				<div class="row">
-					<!-- Project Info Column -->
-					<div class="portfolio-item-description col-sm-6">
-						<h3>Spectral Koopman methods for analysis and control:</h3>
-						<p class="text-justify">
-							The proposed research aims to discover methods based on the spectral analysis of the Koopman operator for the data-driven analysis and synthesis of nonlinear systems. 
-							The Koopman operator provides for a linear lifting of the nonlinear system dynamics in the function space. The eigenfunctions of the Koopman operator also carry information about the underlying state space 
-							geometry. In particular, the stable and unstable manifolds of the nonlinear system can be obtained as zero-level curves of the Koopman eigenfunctions. This connection between the Koopman 
-							eigenfunctions and the state space geometry is exploited to analyze and synthesize nonlinear control systems. In our current research, we are developing spectral Koopman methods for reachability analysis,
-							 safe control design, uncertainty propagation, and optimal control design. We have established a connection between the eigenfunctions of the Koopman operator and the solution of the Hamilton Jacobi equation. 
-							<br>
-						</p>
-
-					</div><!-- End Project Info Column -->
-					<!-- Image Column -->
-					<div class="col-sm-5">
-						<div class="portfolio-item">
-							<div id="carouselExample_1" class="carousel slide" data-ride="carousel">
-								<ol class="carousel-indicators">
-								  <li data-target="#carouselExample_1" data-slide-to="0" class="active"></li>
-								  <li data-target="#carouselExample_1" data-slide-to="1"></li>
-								
-								
-								</ol>
-								<div class="carousel-inner">
-								  <div class="item active ">
-									<img src="img/Resize_image/operator_theoretic_methods/PD_4.6.png" alt="Image 1" class="img-responsive ">
-								  </div>
-								  <div class="item">
-									<img src="img/Resize_image/operator_theoretic_methods/PD_4.7.png" alt="Image 2" class="img-responsive">
-								  </div>
-
-								</div>
-								
-							  </div>
-						</div>
-						
-					</div>
-                      <!-- End Image Column -->   
-					<!-- Project Info Column -->
-					<div class="col-sm-11">
-						<p class="text-justify">
-							This connection allows one to approximate the solution of the Hamilton-Jacobi equation using the Koopman eigenfunctions.
-							The approximation of the Koopman operator and its spectrum can be computed from the data without knowing system dynamics. Hence, using Koopman theory provides a natural pathway for 
-							developing systematic data-driven analysis and synthesis methods for nonlinear control systems. In our current research, we are exploiting various approaches, including Deep-Neural-Networks, 
-							Reproducing Kernel Hilbert Space (RKHS),
-							 and techniques inspired by statistical mechanics for approximation of the Koopman spectrum.  
-						</p>
-					</div>
-					<!-- End Project Info Column -->
-					
-				</div>
-			</div>
-		</div>
-					
-
-        <div class="section">
-	    	<div class="container">
-				<div class="row">
-					<div class="col-md-11">
-						<!-- End Selected Publication -->
-						<div class="job-details-wrapper">
-							<h3>Selected Publications</h3>
-							
-							<ul>
-								<li class="text-justify">U. Vaidya and P. G. Mehta, Lyapunov measure for almost everywhere stability, IEEE Transactions on Automatic Control, Vol 53, pp. 307-323, 2008.</li>
-								<li class="text-justify">U. Vaidya, P. G. Mehta and U. Shanbhag, Nonlinear stabilization via control Lyapunov measure, IEEE Transactions on Automatic Control, Vol 55, pp. 1314-1328, 2010.</li>
-								<li class="text-justify">A. Raghunathan and U. Vaidya, Optimal stabilization using Lyapunov measures, IEEE Transactions on Automatic Control, 2014.</li>
-								<li class="text-justify">U. Vaidya, Stochastic stability analysis of the discrete-time system using Lyapunov measure, American Control Conference, 2015.</li>
-								<li class="text-justify">B. Huang and U. Vaidya, Data-driven feedback stabilization using Koopman operator, Book Chapter: Koopman Operator for Control, 2019.</li>
-								<li class="text-justify">R. Rajaram, U. Vaidya, M. Fardad, and B. Ganapathaysubramanian, Almost Everywhere stability: Linear transfer operator approach, Journal of Mathematical analysis and applications, Vol 368, pp. 144-156, 2010.</li>
-								<li class="text-justify">B. Huang and U. Vaidya, Convex Approach to data-driven optimal control via Perron-Frobenius and Koopman operator, IEEE Transactions on Automatic Control, 2022.</li>
-								<li class="text-justify">U Vaidya, D Tellez-Castro, Data-Driven Stochastic Optimal Control With Safety Constraints Using Linear Transfer Operators, IEEE Transactions on Automatic Control 69 (4), 2100-2115.</li>
-							</ul>
-							
-						</div>
-						<!-- End Selected Publication-->
-					</div>
-					<!-- Sidebar -->
-					
-					<!-- End Sidebar -->
-				</div>
-			</div>
-		</div>
-
-	     <!-- Footer -->
-	    <!-- Footer -->
-	    <div class="footer">
-	    	<div class="container">
-		    	<div class="row">
-		    		<div class="col-footer col-md-3 col-xs-6">
-		    			<h3>Contacts</h3>
-		    			<p class="contact-us-details">
-	        				<b>Address:</b> 233 Flour Daniel Innovation Building
-							Department of Mechanical Engineering
-							Clemson University
-							Clemson SC, 29634<br/>
-	        			<!--	<b>Phone:</b> +44 123 654321<br/>
-	        				<b>Fax:</b> +44 123 654321<br/>-->
-	        				<b>Email:</b> <a style="color: #D56E1D;">uvaidya@clemson.edu</a>
-		    		</div>
-		
-		    		<div class="col-footer col-md-4 col-xs-6">
-		    			
-	        			</p>
-		    		</div>
-		    		<div class="col-footer col-md-2 col-xs-6">
-		    			<h3>Stay Connected</h3>
-		    			<ul class="footer-stay-connected no-list-style">
-		    				<!--<li><a href="#" class="facebook"></a></li>
-		    				<li><a href="#" class="twitter"></a></li>-->
-		    				<li><a href="https://www.researchgate.net/profile/Umesh-Vaidya-3" target="_blank" class="googleplus"></a></li>
-		    			</ul>
-		    		</div>
-		    	</div>
-		    	<div class="row">
-		    		<div class="col-md-12">
-		    			<div class="footer-copyright">&copy; 2025 DyCo AI Lab. All rights reserved.</div>
-		    		</div>
-		    	</div>
-		    </div>
-	    </div>
-        <!-- Javascripts -->
-        <script src="http://ajax.googleapis.com/ajax/libs/jquery/1.9.1/jquery.min.js"></script>
-        <script>window.jQuery || document.write('<script src="js/jquery-1.9.1.min.js"><\/script>')</script>
-        <script src="js/bootstrap.min.js"></script>
-        <script src="http://cdn.leafletjs.com/leaflet-0.5.1/leaflet.js"></script>
-        <script src="js/jquery.fitvids.js"></script>
-        <script src="js/jquery.sequence-min.js"></script>
-        <script src="js/jquery.bxslider.js"></script>
-        <script src="js/main-menu.js"></script>
-        <script src="js/template.js"></script>
-
-    </body>
+    <section id="selected-publications" class="operator-section container" aria-labelledby="publications-title">
+      <div class="section-heading"><h2 id="publications-title">Selected Publications</h2><a class="text-link" href="page-publication.html">Complete bibliography <span aria-hidden="true">&rarr;</span></a></div>
+      <div class="publication-groups">
+        <div class="publication-group-heading"><h3 id="foundational-publications">Foundational Contributions</h3></div>
+        <ul class="reference-list" aria-labelledby="foundational-publications">
+          <li id="ref-measure"><p class="citation">U. Vaidya and P. G. Mehta, <cite>Lyapunov measure for almost everywhere stability</cite>, IEEE Transactions on Automatic Control, Vol 53, pp. 307-323, 2008.</p><div class="reference-links"><a href="https://doi.org/10.1109/TAC.2007.914955">DOI</a></div></li>
+          <li id="ref-control-measure"><p class="citation">U. Vaidya, P. G. Mehta and U. Shanbhag, <cite>Nonlinear stabilization via control Lyapunov measure</cite>, IEEE Transactions on Automatic Control, Vol 55, pp. 1314-1328, 2010.</p><div class="reference-links"><a href="https://ieeexplore.ieee.org/abstract/document/5406095">Publisher</a><a href="page-publication.html#collapse1006">Abstract &amp; citation</a></div></li>
+          <li id="ref-continuous"><p class="citation">R. Rajaram, U. Vaidya, M. Fardad, and B. Ganapathaysubramanian, <cite>Almost Everywhere stability: Linear transfer operator approach</cite>, Journal of Mathematical analysis and applications, Vol 368, pp. 144-156, 2010.</p><div class="reference-links"><a href="https://doi.org/10.1016/j.jmaa.2010.02.032">DOI</a><a href="https://ecs.syr.edu/faculty/fardad/Papers/RajVaiFarGan10.pdf">Author PDF</a></div></li>
+          <li id="ref-optimal"><p class="citation">A. Raghunathan and U. Vaidya, <cite>Optimal stabilization using Lyapunov measures</cite>, IEEE Transactions on Automatic Control, 2014.</p><div class="reference-links"><a href="https://ieeexplore.ieee.org/document/6656845">Publisher</a><a href="page-publication.html#collapse1406">Abstract &amp; citation</a></div></li>
+          <li id="ref-stochastic"><p class="citation">U. Vaidya, <cite>Stochastic stability analysis of the discrete-time system using Lyapunov measure</cite>, American Control Conference, 2015.</p><div class="reference-links"><a href="https://ieeexplore.ieee.org/document/7172061">Publisher</a><a href="https://arxiv.org/abs/1503.04438">Preprint</a></div></li>
+          <li id="ref-feedback"><p class="citation">B. Huang and U. Vaidya, <cite>Data-driven feedback stabilization using Koopman operator</cite>, Book Chapter: Koopman Operator for Control, 2019.</p><div class="reference-links"><a href="https://link.springer.com/book/10.1007/978-3-030-35713-9">Publisher's book record</a><a href="page-publication.html#collapse603">Related bibliography entry</a></div><details class="reference-note"><summary>Citation note</summary><p>The citation above is preserved from the original research page. Springer lists the chapter as <cite>Data-Driven Nonlinear Stabilization Using Koopman Operator</cite> by Bowen Huang, Xu Ma, and Umesh Vaidya, pp. 313-334, in the 2020 volume <cite>The Koopman Operator in Systems and Control</cite>.</p></details></li>
+        </ul>
+        <div class="publication-group-heading"><h3 id="recent-publications">Recent Contributions</h3></div>
+        <ul class="reference-list" aria-labelledby="recent-publications">
+          <li id="ref-hopf"><p class="reference-status">Accepted / CDC 2026</p><p class="citation">Sarang Sutavani and Umesh Vaidya, <cite>Spectral Koopman Hopf formula for Reachability with Adversary</cite>, Accepted for publication in IEEE Control and Decision Conference, 2026.</p><div class="reference-links"><a href="https://www.researchgate.net/publication/411807620_Spectral_Koopman-Hopf_Formula_for_Reachability_with_Adversary#fullTextFileContent">Manuscript</a><a href="page-publication.html#updated_2026_009">Abstract &amp; citation</a></div></li>
+          <li id="ref-hamilton-jacobi"><p class="reference-status">Published / 2025</p><p class="citation">Umesh Vaidya, <cite>When Koopman meets Hamilton and Jacobi</cite>, IEEE Transactions on Automatic Control, 2025.</p><div class="reference-links"><a href="https://ieeexplore.ieee.org/abstract/document/11027780">Publisher</a><a href="https://arxiv.org/abs/2504.07346">Preprint</a><a href="page-publication.html#collapse15">Abstract &amp; citation</a></div></li>
+          <li id="ref-safe-control"><p class="reference-status">Published / 2024</p><p class="citation">U Vaidya, D Tellez-Castro, <cite>Data-Driven Stochastic Optimal Control With Safety Constraints Using Linear Transfer Operators</cite>, IEEE Transactions on Automatic Control 69 (4), 2100-2115.</p><div class="reference-links"><a href="https://ieeexplore.ieee.org/document/10159490/">Publisher</a></div></li>
+          <li id="ref-path-integral"><p class="reference-status">Published / CDC 2023</p><p class="citation">Shankar Deka, Sriram Subhramanian, Umesh Vaidya, <cite>Path-Integral Formula for Computing Koopman Eigenfunctions</cite>, IEEE Control and Decision Conference, 2023.</p><div class="reference-links"><a href="https://arxiv.org/abs/2307.06805">Preprint</a><a href="page-publication.html#collapse305">Abstract &amp; citation</a></div></li>
+          <li id="ref-convex"><p class="reference-status">Published / 2022</p><p class="citation">B. Huang and U. Vaidya, <cite>Convex Approach to data-driven optimal control via Perron-Frobenius and Koopman operator</cite>, IEEE Transactions on Automatic Control, 2022.</p><div class="reference-links"><a href="https://ieeexplore.ieee.org/document/9749893">Publisher</a><a href="https://arxiv.org/abs/2010.01742">Preprint</a></div></li>
+        </ul>
+      </div>
+    </section>
+    <div class="research-return"><div class="container"><a class="text-link" href="page-Research.html"><span aria-hidden="true">&larr;</span> All Research at DyCoAI</a></div></div>
+  </main>
+  <footer id="contact" class="site-footer">
+    <div class="container footer-grid">
+      <div><h2>DyCoAI Laboratory</h2><p>Dynamics and Control for<br>Autonomy and Intelligence</p><p class="footer-affiliation">Clemson University</p></div>
+      <div><h3>Visit</h3><address>125A Flour Daniel Innovation Building<br>Department of Mechanical Engineering<br>Clemson University<br>Clemson, SC 29634</address></div>
+      <div><h3>Connect</h3><a href="mailto:uvaidya@clemson.edu">uvaidya@clemson.edu</a><a href="https://www.researchgate.net/profile/Umesh-Vaidya-3">ResearchGate <span aria-hidden="true">&nearr;</span></a><a href="https://scholar.google.com/citations?user=bzUVrKIAAAAJ&amp;hl=en">Google Scholar <span aria-hidden="true">&nearr;</span></a><a href="page-project-funding.html">Funding &amp; collaborators <span aria-hidden="true">&rarr;</span></a></div>
+    </div>
+    <div class="container footer-bottom"><span>&copy; 2026 DyCoAI Laboratory</span><a href="#main">Back to top <span aria-hidden="true">&uarr;</span></a></div>
+  </footer>
+</body>
 </html>
