@@ -37,4 +37,9 @@ records.forEach((p, index) => {
 });
 for (const anchor of new Set(legacy.map(p => p.anchor))) assert.ok(records.some(p => p.id === anchor), `Old anchor missing: ${anchor}`);
 assert.ok(!/\{\{[A-Z_]+\}\}/.test(html), 'Unrendered template placeholder');
+assert.ok(records.filter(p => !p.year).every(p => p.status === 'under-review'), 'Undated group contains a publication that is not under review');
+assert.ok(!html.includes('Year not specified'), 'Old category label remains');
+assert.ok(html.includes('<option value="unspecified">Publications Under Review</option>'));
+assert.ok(html.includes('<a href="#year-unspecified">Publications Under Review</a>'));
+assert.ok(html.includes('<h3 id="heading-year-unspecified">Publications Under Review <span'));
 console.log(`PASS: ${records.length} records, original citations, abstracts, links, anchors, years, and classification evidence preserved.`);

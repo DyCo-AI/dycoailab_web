@@ -9,7 +9,7 @@ const types = {'journal':'Journal','conference':'Conference','book-chapter':'Boo
 const status = {'under-review':'Under review','accepted':'Accepted (as listed)','listed':''};
 const years = [...new Set(records.map(p=>p.year).filter(Boolean))].sort((a,b)=>b-a);
 if (records.some(p=>!p.year)) years.push(null);
-const yearLabel = year => year || 'Year not specified';
+const yearLabel = year => year || 'Publications Under Review';
 const yearId = year => 'year-' + (year || 'unspecified');
 const safeUrl = url => {
   assert.ok(/^(https?:\/\/|papers\/)/.test(url), `Unsupported publication link: ${url}`);
@@ -25,7 +25,7 @@ function links(p) {
   return p.links.map(l=>`<a href="${safeUrl(l.url)}"${l.kind==='bibtex'?' download':''} title="${escape(l.label)}">${{doi:'DOI',pdf:'PDF',bibtex:'BibTeX',paper:'Paper'}[l.kind]}</a>`).join('');
 }
 function entry(p) {
-  const metadata=[yearLabel(p.year), ...p.types.filter(t=>t!=='unspecified').map(t=>types[t]),status[p.status]].filter(Boolean).join(' · ');
+  const metadata=[p.year, ...p.types.filter(t=>t!=='unspecified').map(t=>types[t]),status[p.status]].filter(Boolean).join(' · ');
   const evidence=p.areaEvidence.length?`<p class="detail-label">Research-area sources</p><ul>${p.areaEvidence.map(e=>`<li><a href="${escape(e.page)}">${escape(areas.find(a=>a.id===e.area).label)}</a></li>`).join('')}</ul>`:'';
   return `<article class="publication-entry" id="${escape(p.id)}" data-year="${p.year||'unspecified'}" data-area="${p.areas.join(' ')||'unclassified'}" data-type="${p.types.join(' ')}" data-status="${p.status}" aria-labelledby="title-${escape(p.id)}">
 <p class="publication-meta">${escape(metadata)}</p>

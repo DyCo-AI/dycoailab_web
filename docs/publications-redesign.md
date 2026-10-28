@@ -8,7 +8,8 @@ for this redesign. The reviewed pages are published from `main`.
 
 The page contains three featured papers from the original bibliography, followed
 by all 185 records grouped by descending year. Seven undated manuscripts appear
-under "Year not specified". Search covers titles, all listed authors, venues,
+under "Publications Under Review". Their unknown years remain null in the source
+data; existing year-group anchors and filter values are preserved. Search covers titles, all listed authors, venues,
 abstracts, and original citation text. Research area, publication type, year,
 and status filters can be combined. Existing publication anchors are preserved;
 duplicate original IDs have distinct suffixes after their first occurrence.
