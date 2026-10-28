@@ -1,0 +1,63 @@
+.offroad-page .offroad-intro { padding-block: 46px 48px; background: var(--soft); border-bottom: 1px solid var(--line); }
+.offroad-page .breadcrumb { margin-bottom: 24px; font-size: 14px; color: var(--purple); }
+.offroad-page h1 { max-width: 1000px; font-size: 42px; line-height: 1.2; }
+.offroad-page .offroad-subtitle { max-width: 860px; margin-top: 22px; font-size: 24px; line-height: 1.45; color: var(--muted); }
+.offroad-page .offroad-overview { max-width: 880px; margin-top: 24px; color: var(--muted); font-size: 16px; }
+.offroad-page .section-jumps { border-top: 1px solid var(--line); padding-top: 22px; gap: 12px 26px; }
+.offroad-page .research-theme { padding-block: 64px; border-bottom: 1px solid var(--line); }
+.offroad-page .soft-band { background: var(--soft); }
+.offroad-page h2 { font-size: 30px; line-height: 1.3; }
+.offroad-page .theme-layout { display: grid; grid-template-columns: minmax(0, .85fr) minmax(0, 1.25fr); gap: 48px; align-items: start; }
+.offroad-page .theme-copy h2 { margin-bottom: 22px; }
+.offroad-page .theme-copy p:not(.eyebrow):not(.reference-status) { font-size: 16px; color: var(--muted); }
+.offroad-page .featured-paper { border-top: 1px solid var(--line); margin-top: 26px; padding-top: 20px; }
+.offroad-page .featured-paper > a { display: block; color: var(--purple); font-size: 15px; line-height: 1.5; font-weight: 600; }
+.offroad-page .featured-paper > a:hover { text-decoration: underline; }
+.offroad-page figure { margin: 0; min-width: 0; }
+.offroad-page .scientific-image { display: block; background: #fff; }
+.offroad-page .scientific-image img { width: 100%; height: auto; object-fit: contain; }
+.offroad-page figcaption { padding-top: 18px; color: var(--muted); font-size: 14px; line-height: 1.6; }
+.offroad-page figcaption a, .offroad-page .media-credit a { color: var(--purple); text-decoration: underline; text-underline-offset: 3px; }
+.offroad-page .figure-source { display: block; margin-top: 10px; font-size: 13px; }
+.offroad-page .wide-figure { margin-top: 40px; }
+.offroad-page .demo-grid { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 36px; }
+.offroad-page .safety-demos { margin-top: 44px; }
+.offroad-page video { display: block; width: 100%; height: auto; object-fit: contain; background: #fff; }
+.offroad-page .safety-demos video { aspect-ratio: 1; }
+.offroad-page video:focus-visible { outline: 3px solid var(--purple); outline-offset: 5px; }
+.offroad-page .media-credit { margin-top: 24px; font-size: 12px; color: var(--muted); }
+.offroad-page .publication-groups { display: grid; grid-template-columns: 230px minmax(0, 1fr); gap: 36px 46px; }
+.offroad-page .publication-group-heading { padding-top: 22px; border-top: 2px solid var(--orange); font-size: 22px; line-height: 1.35; }
+.offroad-page .reference-list { list-style: none; padding: 0; margin: 0; border-top: 1px solid var(--line); }
+.offroad-page .reference-list > li { padding-block: 20px; border-bottom: 1px solid var(--line); }
+.offroad-page .citation { font-size: 15px; line-height: 1.65; overflow-wrap: anywhere; }
+.offroad-page .citation cite { font-style: normal; font-weight: 600; }
+.offroad-page .reference-status { color: var(--purple); font-size: 12px; font-weight: 600; margin-bottom: 7px; }
+.offroad-page .reference-links { display: flex; flex-wrap: wrap; gap: 8px 22px; margin-top: 8px; }
+.offroad-page .reference-links a { color: var(--purple); font-size: 13px; padding-block: 4px; text-decoration: underline; text-underline-offset: 3px; }
+.offroad-page .demonstration-links { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 36px; margin-top: 40px; border-top: 1px solid var(--line); padding-top: 28px; }
+.offroad-page .demonstration-links h3 { font-size: 20px; }
+.offroad-page .demonstration-links .text-links { margin-top: 14px; }
+.offroad-page .research-return { padding-block: 28px; }
+@media (max-width: 1000px) {
+  .offroad-page .theme-layout { gap: 32px; grid-template-columns: repeat(2, minmax(0, 1fr)); }
+  .offroad-page .theme-copy h2 { font-size: 27px; }
+}
+@media (max-width: 850px) {
+  .offroad-page .theme-layout, .offroad-page .publication-groups { grid-template-columns: 1fr; }
+  .offroad-page .theme-layout figure { max-width: 720px; width: 100%; margin-inline: auto; }
+  .offroad-page .publication-groups { gap: 18px; }
+  .offroad-page .publication-group-heading:not(:first-child) { margin-top: 24px; }
+}
+@media (max-width: 600px) {
+  .offroad-page .offroad-intro { padding-block: 32px 36px; }
+  .offroad-page h1 { font-size: 34px; }
+  .offroad-page .offroad-subtitle { font-size: 21px; }
+  .offroad-page .research-theme { padding-block: 40px; }
+  .offroad-page h2, .offroad-page .theme-copy h2 { font-size: 27px; }
+  .offroad-page .demo-grid, .offroad-page .demonstration-links { grid-template-columns: 1fr; gap: 32px; }
+  .offroad-page .wide-figure { margin-top: 30px; }
+}
+@media print {
+  .offroad-page figure, .offroad-page .reference-list > li { break-inside: avoid; }
+}

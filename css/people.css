@@ -1,0 +1,49 @@
+.people-page .people-intro { padding-block: 46px 48px; background: var(--soft); border-bottom: 1px solid var(--line); }
+.people-page .people-intro h1 { font-size: 42px; line-height: 1.2; }
+.people-page .people-lead { max-width: 760px; margin-top: 22px; color: var(--muted); }
+.people-page .people-section { padding-block: 48px; }
+.people-page .people-section + .people-section { border-top: 1px solid var(--line); }
+.people-page .people-section h2 { font-size: 30px; margin-bottom: 28px; }
+.people-page .lead-profile { display: grid; grid-template-columns: 220px minmax(0, 1fr); gap: 38px; align-items: center; }
+.people-page .lead-profile img { width: 220px; height: 270px; object-fit: cover; object-position: center 24%; }
+.people-page .lead-profile h3 { font-size: 26px; }
+.people-page .person-role { color: var(--purple); font-size: 14px; margin-top: 9px; }
+.people-page .person-details { max-width: 640px; color: var(--muted); margin-top: 16px; font-size: 16px; }
+.people-page .member-grid { display: grid; grid-template-columns: repeat(4, minmax(0, 1fr)); gap: 32px; padding: 0; margin: 0; list-style: none; }
+.people-page .member-grid > li { min-width: 0; }
+.people-page .portrait { width: 100%; aspect-ratio: 4 / 5; background: var(--soft); overflow: hidden; }
+.people-page .portrait img { width: 100%; height: 100%; object-fit: cover; object-position: center 25%; }
+.people-page .portrait .ethan-portrait { object-position: center top; }
+.people-page .initials-portrait { display: flex; align-items: center; justify-content: center; color: var(--purple); font-size: 52px; font-weight: 400; background: #eef0f1; }
+.people-page .member-grid h3 { font-size: 21px; line-height: 1.35; margin-top: 18px; overflow-wrap: break-word; }
+.people-page .member-grid .person-role { font-size: 13px; margin-top: 6px; }
+.people-page .alumni-band { background: var(--soft); border-top: 1px solid var(--line); }
+.people-page .alumni-list { display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); gap: 0 42px; list-style: none; padding: 0; margin: 0; }
+.people-page .alumni-list li { padding-block: 15px; border-bottom: 1px solid var(--line); font-size: 16px; overflow-wrap: break-word; }
+.people-page .alumni-name { display: block; font-weight: 600; }
+.people-page .alumni-degree { display: block; margin-top: 4px; font-size: 14px; color: var(--purple); }
+.people-page .alumni-advising { display: block; margin-top: 4px; font-size: 13px; color: var(--muted); }
+.people-page .join-section { border-top: 1px solid var(--line); }
+.people-page .join-section p { max-width: 700px; color: var(--muted); }
+@media (max-width: 1000px) {
+  .people-page .member-grid { gap: 24px; }
+  .people-page .member-grid h3 { font-size: 19px; }
+}
+@media (max-width: 850px) {
+  .people-page .member-grid { grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 32px 24px; }
+  .people-page .alumni-list { grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 0 28px; }
+}
+@media (max-width: 600px) {
+  .people-page .people-intro, .people-page .people-section { padding-block: 36px; }
+  .people-page .people-intro h1 { font-size: 34px; }
+  .people-page .people-section h2 { font-size: 27px; }
+  .people-page .lead-profile { grid-template-columns: 1fr; gap: 24px; }
+  .people-page .lead-profile h3 { font-size: 24px; overflow-wrap: break-word; }
+  .people-page .member-grid { gap: 28px 20px; }
+  .people-page .member-grid h3 { font-size: 18px; }
+  .people-page .alumni-list { grid-template-columns: 1fr; }
+  .people-page .initials-portrait { font-size: 40px; }
+}
+@media print {
+  .people-page .member-grid > li, .people-page .lead-profile { break-inside: avoid; }
+}
