@@ -62,6 +62,11 @@
           "kind": "pdf"
         },
         {
+          "kind": "paper",
+          "label": "arXiv:2610.00178",
+          "url": "https://arxiv.org/abs/2610.00178"
+        },
+        {
           "kind": "bibtex",
           "label": "BibTeX",
           "url": "papers/data-to-certificates-d2c-koopman-supereigenfunctions.bib"
