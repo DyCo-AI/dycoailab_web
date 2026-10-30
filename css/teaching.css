@@ -1,0 +1,11 @@
+.teaching-term { margin-top: 48px; max-width: 960px; }
+.teaching-term h2 { font-size: 26px; margin-bottom: 20px; }
+.course-list { list-style: none; padding: 0; margin: 0; border-top: 1px solid var(--line); }
+.course-list li { display: grid; grid-template-columns: 110px minmax(0, 1fr); gap: 24px; padding: 24px 0; border-bottom: 1px solid var(--line); }
+.course-code { color: var(--purple); font-size: 15px; font-weight: 700; }
+.course-list h3 { font-size: 20px; line-height: 1.5; }
+@media (max-width: 600px) {
+  .teaching-term { margin-top: 36px; }
+  .course-list li { grid-template-columns: 1fr; gap: 8px; }
+  .course-list h3 { font-size: 19px; }
+}
