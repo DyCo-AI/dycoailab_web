@@ -8,11 +8,15 @@ const legacy = [...JSON.parse(read('data/publications-legacy.json')), ...JSON.pa
 const html = read('page-publication.html');
 const escape = value => String(value).replace(/[&<>"']/g, c => ({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;',"'":'&#39;'}[c]));
 const norm = value => value.toLowerCase().replace(/[^a-z0-9]/g, '');
-assert.equal(records.length, legacy.length);
+assert.ok(records.length >= legacy.length, 'Original bibliography entries removed');
+for (const [index, original] of legacy.entries()) {
+  const record = records[index];
+  assert.ok(record, `Original entry missing: ${original.anchor}`);
+  assert.deepEqual(record.source, original, `Source changed: ${original.anchor}`);
+}
 assert.equal(new Set(records.map(p => p.id)).size, records.length);
 assert.equal((html.match(/class="publication-entry"/g) || []).length, records.length);
-records.forEach((p, index) => {
-  assert.deepEqual(p.source, legacy[index], `Source changed: ${p.id}`);
+records.forEach(p => {
   assert.ok(html.includes(escape(p.source.citation)), `Citation missing: ${p.id}`);
   for (const answer of p.source.answers) {
     if (/^Abstract:/i.test(answer)) {
@@ -42,4 +46,10 @@ assert.ok(!html.includes('Year not specified'), 'Old category label remains');
 assert.ok(html.includes('<option value="unspecified">Publications Under Review</option>'));
 assert.ok(html.includes('<a href="#year-unspecified">Publications Under Review</a>'));
 assert.ok(html.includes('<h3 id="heading-year-unspecified">Publications Under Review <span'));
+const corl = records.filter(p => norm(p.title) === norm('When Are World-Model Rollout Errors Correctable? Adaptive Koopman Residual Learning for Legged Locomotion'));
+assert.equal(corl.length, 1, 'CoRL publication missing or duplicated');
+assert.equal(corl[0].year, 2026);
+assert.equal(corl[0].status, 'accepted');
+assert.deepEqual(corl[0].types, ['conference']);
+assert.equal(corl[0].authors, 'Yinhong Qin, Sriram S. K. S. Narayanan, Luyang Zhao, and Umesh Vaidya');
 console.log(`PASS: ${records.length} records, original citations, abstracts, links, anchors, years, and classification evidence preserved.`);

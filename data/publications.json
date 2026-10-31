@@ -7778,6 +7778,30 @@
           }
         ]
       }
+    },
+    {
+      "id": "corl_2026_world_model_rollout_errors",
+      "authors": "Yinhong Qin, Sriram S. K. S. Narayanan, Luyang Zhao, and Umesh Vaidya",
+      "title": "When Are World-Model Rollout Errors Correctable? Adaptive Koopman Residual Learning for Legged Locomotion",
+      "venue": "2026 Conference on Robot Learning (CoRL)",
+      "year": 2026,
+      "yearSource": "Supplied by the laboratory director",
+      "status": "accepted",
+      "types": ["conference"],
+      "areas": [],
+      "areaEvidence": [],
+      "abstract": "",
+      "links": [],
+      "featured": false,
+      "issues": [],
+      "source": {
+        "section": "Year 2026",
+        "anchor": "corl_2026_world_model_rollout_errors",
+        "citation": "Yinhong Qin, Sriram S. K. S. Narayanan, Luyang Zhao, and Umesh Vaidya, When Are World-Model Rollout Errors Correctable? Adaptive Koopman Residual Learning for Legged Locomotion, accepted at the 2026 Conference on Robot Learning (CoRL).",
+        "body": "",
+        "answers": [],
+        "links": []
+      }
     }
   ],
   "areas": [
