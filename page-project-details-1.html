@@ -1,282 +1,179 @@
-<!DOCTYPE html>
-<!--[if lt IE 7]>      <html class="no-js lt-ie9 lt-ie8 lt-ie7"> <![endif]-->
-<!--[if IE 7]>         <html class="no-js lt-ie9 lt-ie8"> <![endif]-->
-<!--[if IE 8]>         <html class="no-js lt-ie9"> <![endif]-->
-<!--[if gt IE 8]><!--> <html class="no-js"> <!--<![endif]-->
-    <head>
-        <meta charset="utf-8">
-        <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
-		<title>DyCo AI</title>
-        <meta name="description" content="">
-        <meta name="viewport" content="width=device-width">
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="description" content="DyCoAI research in cyber-physical systems: communication limits, stochastic network synchronization, robust optimization, and dynamical optimization methods.">
+  <meta name="theme-color" content="#522d80">
+  <title>Cyber-Physical Systems: Networked Control, Stability, and Optimization | DyCoAI Laboratory</title>
+  <link rel="stylesheet" href="css/home.css">
+  <link rel="stylesheet" href="css/cps.css">
+  <script src="js/home.js" defer></script>
+</head>
+<body class="cps-page">
+  <a class="skip-link" href="#main">Skip to content</a>
+  <header class="site-header">
+    <div class="container header-inner">
+      <a class="brand" href="index.html" aria-label="DyCoAI Laboratory home">
+        <img src="img/website_logo.jpg" alt="DyCoAI Laboratory" width="200" height="55">
+        <span class="brand-affiliation">Clemson University</span>
+      </a>
+      <button class="menu-toggle" type="button" aria-expanded="false" aria-controls="primary-navigation" aria-label="Open navigation" hidden><span aria-hidden="true" class="menu-symbol"></span></button>
+      <nav id="primary-navigation" aria-label="Main navigation">
+        <a href="index.html">Home</a><a href="page-Research.html" aria-current="true">Research</a><a href="page-teaching.html">Teaching</a><a href="page_research_team.html">People</a><a href="page-publication.html">Publications</a><a href="index.html#news">News</a><a href="#contact">Contact</a>
+      </nav>
+    </div>
+  </header>
+  <main id="main">
+    <section class="cps-intro" aria-labelledby="cps-title">
+      <div class="container">
+        <p class="breadcrumb"><a href="page-Research.html">Research</a> <span aria-hidden="true">/</span> Cyber-Physical Systems</p>
+        <h1 id="cps-title">Cyber-Physical Systems: Networked Control, Stability, and Optimization</h1>
+        <p class="cps-subtitle">Fundamental limits of communication-constrained control, synchronization of uncertain networks, robust optimization, and distributed dynamical algorithms.</p>
+        <div class="cps-overview">
+          <p>Cyber-physical systems integrate physical processes, feedback control, computation, and communication networks. The interaction between these components introduces fundamental challenges arising from limited communication bandwidth, stochastic packet losses, uncertain communication channels, and distributed information.</p>
+          <p>Our research investigates the mathematical foundations of networked dynamical systems, with particular emphasis on the limits of feedback control and estimation over uncertain communication channels, synchronization of interconnected dynamical systems, and robust optimization under uncertainty. We also develop continuous-time dynamical approaches to distributed and constrained optimization, exploiting connections between stability theory, nonlinear dynamics, and optimization algorithms.</p>
+          <p>Together, these contributions provide a theoretical foundation for understanding how network uncertainty influences stability and performance, and for designing scalable control and optimization methods for interconnected physical systems.</p>
+        </div>
+        <nav class="text-links section-jumps" aria-label="Research themes">
+          <a href="#networked-control">Networked Control</a><a href="#synchronization">Synchronization</a><a href="#robust-optimization">Robust Optimization</a><a href="#dynamical-optimization">Dynamical Optimization</a><a href="#selected-publications">Publications</a>
+        </nav>
+      </div>
+    </section>
 
-        <link rel="stylesheet" href="css/bootstrap.min.css">
-        <link rel="stylesheet" href="css/icomoon-social.css">
-        <link href='http://fonts.googleapis.com/css?family=Open+Sans:400,700,600,800' rel='stylesheet' type='text/css'>
+    <section id="networked-control" class="research-theme" aria-labelledby="networked-title">
+      <div class="container">
+        <div class="section-introduction theme-copy">
+          <p class="eyebrow">01 / Communication and stability</p>
+          <h2 id="networked-title">Fundamental Limits of Networked Control and Estimation</h2>
+          <p>Feedback over a communication network must contend with packet losses, limited information rates, and stochastic variations in transmitted signals. Our work relates the instability of the physical dynamics to the channel reliability required for stabilization and bounded estimation error.</p>
+          <p>For nonlinear systems, the analysis connects communication limits with positive Lyapunov exponents and measure-theoretic entropy under the assumptions of the corresponding results. This accounts for non-equilibrium behavior beyond local linearization at an equilibrium. For continuous-time linear systems with multiplicative channel uncertainty, mean-square stability admits an input-output small-gain characterization and linear-matrix-inequality computations.</p>
+          <ul class="contributions">
+            <li>Necessary communication-quality conditions for nonlinear stabilization and observation over erasure channels.</li>
+            <li>Mean-square stability analysis and controller synthesis for stochastic networked systems.</li>
+            <li>Critical uncertainty limits determined jointly by plant dynamics and channel assumptions.</li>
+          </ul>
+          <div class="text-links"><a href="#ref-mean-square">Mean-square stability</a><a href="#ref-observation">Observation limits</a><a href="#ref-entropy">Entropy and stabilization</a></div>
+        </div>
+        <figure class="wide-figure">
+          <a class="scientific-image" href="img/research/cyber-physical-systems/networked-feedback-stability.png" aria-label="Open figure at full resolution: Feedback architecture with uncertain communication channels, alongside a plot of state variance versus channel uncertainty."><img src="img/research/cyber-physical-systems/networked-feedback-stability.png" alt="Feedback architecture with uncertain communication channels, alongside a plot of state variance versus channel uncertainty." width="1942" height="809" loading="lazy"></a>
+          <figcaption><strong>Communication uncertainty and feedback stability.</strong> The plant and controller exchange signals through uncertain channels (left). Increasing communication uncertainty produces growth in steady-state state variance and a stability threshold in the illustrated example (right); its location depends on the system and channel model.<a class="figure-source" href="#ref-mean-square">Related research: mean-square stability of networked systems</a></figcaption>
+        </figure>
+        <div class="subtopic theme-copy">
+          <h3>Networked Control over Uncertain Input and Output Channels</h3>
+          <p>A multi-input, multi-output feedback interconnection can be expressed as a nominal deterministic system coupled to structured stochastic uncertainty. This representation supports stability analysis and convex computations for control design without treating communication uncertainty as an unstructured disturbance.</p>
+        </div>
+        <figure class="wide-figure">
+          <a class="scientific-image" href="img/research/cyber-physical-systems/mimo-uncertain-channels.png" aria-label="Open figure at full resolution: MIMO plant and controller with uncertain input and output channels, transformed into a nominal system with structured stochastic feedback."><img src="img/research/cyber-physical-systems/mimo-uncertain-channels.png" alt="MIMO plant and controller with uncertain input and output channels, transformed into a nominal system with structured stochastic feedback." width="1905" height="825" loading="lazy"></a>
+          <figcaption><strong>Structured stochastic feedback representation.</strong> Input and output channel uncertainty in the plant-controller interconnection (a) is reorganized as a nominal system with multiple stochastic feedback channels (b).<a class="figure-source" href="https://arxiv.org/abs/1602.02857">Related formulation: Nandanoori, Diwadkar, and Vaidya (2018)</a></figcaption>
+        </figure>
+      </div>
+    </section>
 
-        <link rel="stylesheet" href="css/leaflet.css" />
-		<!--[if lte IE 8]>
-		    <link rel="stylesheet" href="css/leaflet.ie.css" />
-		<![endif]-->
-		<link rel="stylesheet" href="css/main-orange.css">
+    <section id="synchronization" class="research-theme soft-band" aria-labelledby="synchronization-title">
+      <div class="container">
+        <div class="section-introduction theme-copy">
+          <p class="eyebrow">02 / Collective dynamics</p>
+          <h2 id="synchronization-title">Synchronization of Uncertain Dynamical Networks</h2>
+          <p>Synchronization depends on the interaction of local nonlinear dynamics, network topology, coupling strength, and stochastic link uncertainty. We derive sufficient conditions that relate these ingredients to the spectral properties of the nominal network Laplacian.</p>
+          <p>The resulting synchronization margin exposes tradeoffs between connectivity and uncertainty. In the studied nearest-neighbor networks, adding more connections need not improve robustness: the optimal number of neighbors and coupling gain depend on the dynamics and uncertainty statistics.</p>
+          <ul class="contributions">
+            <li>Mean-square synchronization conditions for nonlinear networks with uncertain links.</li>
+            <li>Size-independent tests for the studied network models.</li>
+            <li>Analysis of how Laplacian eigenvalues, coupling, and link uncertainty affect robustness.</li>
+          </ul>
+          <div class="text-links"><a href="#ref-tradeoffs">Synchronization tradeoffs</a><a href="#ref-synchronization">Nonlinear network analysis</a></div>
+        </div>
+        <figure class="wide-figure">
+          <a class="scientific-image" href="img/research/cyber-physical-systems/stochastic-network-synchronization.png" aria-label="Open figure at full resolution: Two parameter-dependent synchronization surfaces and a heatmap with Laplacian and uncertainty axes."><img src="img/research/cyber-physical-systems/stochastic-network-synchronization.png" alt="Two parameter-dependent synchronization surfaces and a heatmap with Laplacian and uncertainty axes." width="2172" height="724" loading="lazy"></a>
+          <figcaption><strong>Interplay of dynamics, topology, and link uncertainty.</strong> The surfaces examine changes in internal instability (a) and the nonlinearity bound (b); panel (c) shows a fixed-parameter slice of the synchronization margin. The analysis is based on a sufficient synchronization condition, not a probability of synchronization.<a class="figure-source" href="https://www.nature.com/articles/srep21157">Scientific Reports (2016), Figure 1</a></figcaption>
+        </figure>
+      </div>
+    </section>
 
-        <script src="js/modernizr-2.6.2-respond-1.1.0.min.js"></script>
-    </head>
-    <body>
-        <!--[if lt IE 7]>
-            <p class="chromeframe">You are using an <strong>outdated</strong> browser. Please <a href="http://browsehappy.com/">upgrade your browser</a> or <a href="http://www.google.com/chromeframe/?redirect=true">activate Google Chrome Frame</a> to improve your experience.</p>
-        <![endif]-->
-        
+    <section id="robust-optimization" class="research-theme" aria-labelledby="robust-title">
+      <div class="container theme-layout">
+        <div class="theme-copy">
+          <p class="eyebrow">03 / Decisions under uncertainty</p>
+          <h2 id="robust-title">Robust Control and Optimization Under Uncertainty</h2>
+          <p>Robust optimization seeks decisions that remain feasible and effective across a prescribed uncertainty set. We study these problems through dynamical systems whose states include decision variables, multipliers, and uncertainty-related variables.</p>
+          <p>Our continuous-time formulation uses saddle-point dynamics rather than the standard gradient of a Lagrangian. Stability analysis connects equilibria of these dynamics to robust solutions for the convex-concave problem class and regularity assumptions considered in the paper. A complementary discrete-time algorithm brings this perspective to iterative computation.</p>
+          <p>Structured uncertainty sets, including intersections of ellipsoids, provide concrete examples of how uncertainty geometry enters the optimization dynamics. The trajectories illustrate a particular numerical example, rather than a convergence guarantee for arbitrary problems.</p>
+          <ul class="contributions">
+            <li>Dynamical formulations that evolve optimization and uncertainty variables together.</li>
+            <li>Stability and convergence analysis under explicit problem assumptions.</li>
+            <li>Continuous- and discrete-time approaches to robust optimization.</li>
+          </ul>
+          <div class="text-links"><a href="#ref-robust-continuous">Continuous-time method</a><a href="#ref-robust-discrete">Discrete-time algorithm</a></div>
+        </div>
+        <figure class="portrait-figure">
+          <a class="scientific-image" href="img/research/cyber-physical-systems/robust-optimization-dynamics.png" aria-label="Open figure at full resolution: Robust optimization variable trajectories above intersecting ellipsoidal uncertainty sets and solution markers."><img src="img/research/cyber-physical-systems/robust-optimization-dynamics.png" alt="Robust optimization variable trajectories above intersecting ellipsoidal uncertainty sets and solution markers." width="1024" height="1536" loading="lazy"></a>
+          <figcaption><strong>Robust optimization dynamics and uncertainty geometry.</strong> The upper panel shows the evolution of optimization variables. The lower panel shows intersecting ellipsoidal uncertainty sets with sample points and solution markers.<a class="figure-source" href="#ref-robust-continuous">Related research: Ebrahimi, Elia, and Vaidya, ECC (2019)</a></figcaption>
+        </figure>
+      </div>
+    </section>
 
-           <!-- Navigation & Logo-->
-        <div class="mainmenu-wrapper">
-	        <div class="container">
-	        	<!--<div class="menuextras">
-					<div class="extras">
-						<ul>
-							<li class="shopping-cart-items"><i class="glyphicon glyphicon-shopping-cart icon-white"></i> <a href="page-shopping-cart.html"><b>3 items</b></a></li>
-							<li>
-								<div class="dropdown choose-country">
-									<a class="#" data-toggle="dropdown" href="#"><img src="img/flags/gb.png" alt="Great Britain"> UK</a>
-									<ul class="dropdown-menu" role="menu">
-										<li role="menuitem"><a href="#"><img src="img/flags/us.png" alt="United States"> US</a></li>
-										<li role="menuitem"><a href="#"><img src="img/flags/de.png" alt="Germany"> DE</a></li>
-										<li role="menuitem"><a href="#"><img src="img/flags/es.png" alt="Spain"> ES</a></li>
-									</ul>
-								</div>
-							</li>
-			        		<li><a href="page-login.html">Login</a></li>
-			        	</ul>
-					</div>
-		        </div>-->
-		        <nav id="mainmenu" class="mainmenu">
-					<ul>
-						<li class="logo-wrapper"><a href="index.html"><img src="img/website_logo.jpg" alt="Multipurpose Twitter Bootstrap Template"></a></li>
-						<li class="active">
-							<a href="index.html">Home</a>
-						</li>
-						<li>
-							<a href="page-Research.html">Research</a>
-						</li>
-						<li>
-							<a href="page_research_team.html">Research Team </a>
-						</li>
-						<li>
-							<a href="page-publication.html">Publication </a>
-						</li>
-						<li>
-							<a href="page-project-funding.html">Funding </a>
-						</li>
-							</div><!-- /mainmenu-submenu -->
-						</li>
-					</ul>
-				</nav>
-			</div>
-		</div>
+    <section id="dynamical-optimization" class="research-theme soft-band" aria-labelledby="optimization-title">
+      <div class="container">
+        <div class="section-introduction theme-copy">
+          <p class="eyebrow">04 / Optimization as dynamics</p>
+          <h2 id="optimization-title">Distributed Optimization Using Dynamical Systems</h2>
+          <p>Networked agents often need to optimize using local information while constraints and objectives change with time. We investigate continuous-time optimization dynamics and use nonlinear stability tools to study convergence, with distributed and constrained optimization as motivating settings.</p>
+          <p>Our published time-varying optimization work develops projected primal-dual systems that track optimizer trajectories. Asymptotic and fixed-time results hold under the stated convexity, smoothness, and feasibility assumptions; fixed-time bounds do not depend on initialization. These results are distinct from a blanket convergence guarantee for every distributed network.</p>
+          <ul class="contributions">
+            <li>Continuous-time approaches to constrained and time-varying convex optimization.</li>
+            <li>Lyapunov-based tracking analysis and fixed-time convergence mechanisms.</li>
+            <li>A time-varying extended Fermat-Torricelli example using a sum-of-squared-distances objective.</li>
+          </ul>
+          <div class="text-links"><a href="#ref-time-varying">Constrained optimization</a><a href="#ref-fixed-time">Fixed-time dynamics</a></div>
+        </div>
+        <figure class="wide-figure">
+          <a class="scientific-image" href="img/research/cyber-physical-systems/distributed-optimization-trajectories.png" aria-label="Open figure at full resolution: Four snapshots of moving convex sets and the optimizer trajectory in a time-varying squared-distance problem."><img src="img/research/cyber-physical-systems/distributed-optimization-trajectories.png" alt="Four snapshots of moving convex sets and the optimizer trajectory in a time-varying squared-distance problem, ordered from left to right by increasing time." width="2172" height="724" loading="lazy"></a>
+          <figcaption><strong>Tracking a time-varying optimizer.</strong> Snapshots at <i>T</i><sub>f</sub>/4, <i>T</i><sub>f</sub>/2, 3<i>T</i><sub>f</sub>/4, and <i>T</i><sub>f</sub> show the evolution of fixed-time optimization dynamics. The red dotted trajectory minimizes the sum of squared distances to the convex sets.<a class="figure-source" href="https://arxiv.org/html/2312.10203v1#S6">Raveendran, Mahindrakar, and Vaidya, Figure 2</a></figcaption>
+        </figure>
+      </div>
+    </section>
 
-        <!-- Page Title -->
-		<div class="section section-breadcrumbs">
-			<div class="container">
-				<div class="row">
-					<div class="col-md-12">
-						<h1>Research Details</h1>
-					</div>
-				</div>
-			</div>
-		</div>
-        <div class="section">
-	    	<div class="container">
-				<div class="row">
-
-					<!-- Project Info Column -->
-					<div class="portfolio-item-description col-sm-6">
-						<h2>Cyber-Physical Systems</h2>
-						<h3>Fundamental limitations for control of dynamical systems over networks:</h3>
-						<p class="text-justify">
-							We have discovered a systematic framework for analyzing and designing network-controlled systems in the presence of uncertainty.
-							 This includes discovering fundamental limitation results for estimating and stabilizing nonlinear systems over uncertain communication channels. 
-							 This research mainly connected fundamental limitations for nonlinear stabilization and estimation with the measure-theoretic entropy of steady-state invariant measure of 
-							 the open loop system. The positive Lyapunov exponents capture the measure-theoretic entropy for a system with non-equilibrium open loop dynamics such as chaotic attractors 
-							 or unstable limit cycles. <br>
-						</p>
-
-					</div><!-- End Project Info Column -->
-						<!-- Image Column -->
-						<div class="col-sm-5">
-							<div class="portfolio-item">
-								<div id="carouselExample" class="carousel slide" data-ride="carousel">
-									<ol class="carousel-indicators">
-									  <li data-target="#carouselExample" data-slide-to="0" class="active"></li>
-									  <li data-target="#carouselExample" data-slide-to="1"></li>
-									  <li data-target="#carouselExample" data-slide-to="2"></li>
-									</ol>
-									<div class="carousel-inner">
-									  <div class="item active ">
-										<img src="img/Resize_image/cyber_physical_system/PD_1.1.png" alt="Image 1" class="img-responsive ">
-									  </div>
-									  <div class="item">
-										<img src="img/Resize_image/cyber_physical_system/PD_1.2.png" alt="Image 2" class="img-responsive">
-									  </div>
-									  <div class="item">
-										<img src="img/Resize_image/cyber_physical_system/PD_1.3.png" alt="Image 3" class="img-responsive">
-									  </div>
-									</div>
-									
-								  </div>
-							</div>
-							
-						</div>
-						  <!-- End Image Column -->   
-					<!-- Project Info Column -->
-					<div class="col-sm-11">
-						<p class="text-justify">
-							This was the first systematic result to highlight the critical role of non-equilibrium dynamics in nonlinear stabilization and estimation over uncertain channels, 
-							and it differs from the existing results based on equilibrium dynamics of local linearization of a nonlinear system. Our results generalize existing results known in the case of 
-							linear systems where Lyapunov exponents emerge as a natural generalization of eigenvalues from linear systems to nonlinear systems.
-						</p>
-					</div>
-					<!-- End Project Info Column -->
-				</div>	
-				<!-- End Related Projects -->
-			</div>
-		</div>
-        
-		<div class="section">
-	    	<div class="container">
-				<div class="row">
-					<!-- Project Info Column -->
-					<div class="portfolio-item-description col-sm-6">
-						<h3>Control and optimization over uncertainty networks:</h3>
-						<p class="text-justify">
-							The main contribution of this work is to understand fundamental tradeoffs that arise in the control of linear and nonlinear dynamical systems over networks in the 
-							presence of uncertainty. For systems with linear dynamics, we have provided a systematic convex optimization-based approach for synthesizing control robust to 
-							stochastic network communication uncertainty. For systems with nonlinear dynamics, our results offer tradeoffs that arise between the internal dynamics at the 
-							individual nodes of the network, network topology, and the communication uncertainty for robust synchronization over the network. Network dynamical systems are 
-							also of interest for solving optimization problems in a distributed manner. The dynamical system viewpoint is employed to solve an optimization problem for 
-							distributed optimization over the network.Our main contributions to this topic include providing a dynamical systems approach for solving robust 
-							optimization problems and finite-time convergence proof for solving time-varying optimization problems.  
-						</p><br>
-						</p>
-
-					</div><!-- End Project Info Column -->
-					<!-- Image Column -->
-					<div class="col-sm-5">
-						<div class="portfolio-item">
-							<div id="carouselExample_1" class="carousel slide" data-ride="carousel">
-								<ol class="carousel-indicators">
-								  <li data-target="#carouselExample_1" data-slide-to="0" class="active"></li>
-								  <li data-target="#carouselExample_1" data-slide-to="1"></li>
-								  <li data-target="#carouselExample_1" data-slide-to="2"></li>
-								  <li data-target="#carouselExample_1" data-slide-to="3"></li>
-								</ol>
-								<div class="carousel-inner">
-								  <div class="item active ">
-									<img src="img/Resize_image/cyber_physical_system/Research_detail_1.jpg" alt="Image 1" class="img-responsive ">
-								  </div>
-								  <div class="item">
-									<img src="img/Resize_image/cyber_physical_system/PD_1.4.png" alt="Image 2" class="img-responsive">
-								  </div>
-								  <div class="item">
-									<img src="img/Resize_image/cyber_physical_system/PD_1.5.png" alt="Image 3" class="img-responsive">
-								  </div>
-								  <div class="item">
-									<img src="img/Resize_image/cyber_physical_system/PD_1.6.png" alt="Image 4" class="img-responsive">
-								  </div>
-								</div>
-								
-							  </div>
-						</div>
-						
-					</div>
-                      <!-- End Image Column -->   
-					<!-- Project Info Column -->
-					<div class="col-sm-11">
-						<p class="text-justify">
-							
-					</div>
-					<!-- End Project Info Column -->
-					
-				</div>
-			</div>
-		</div>
-					
-
-        <div class="section">
-	    	<div class="container">
-				<div class="row">
-					<div class="col-md-11">
-						<!-- End Selected Publication -->
-						<div class="job-details-wrapper">
-							<h3>Selected Publications</h3>
-							
-							<ul>
-								<li class="text-justify">A. Diwadkar and U. Vaidya, Limitations, and tradeoffs in synchronizing large-scale networks with uncertain links, Scientific Reports, Nature Publication Group, 2016.</li>
-								<li class="text-justify">S. Pushpak, A. Diwadkar, and U. Vaidya, Mean Square-Based Stochastic Stability Analysis of Continuous-time Linear Network System, IEEE Transactions of Automatic Control, Volume: 63, Issue: 12, Dec. 2018.</li>
-								<li class="text-justify">A. Diwadkar and U. Vaidya, Limitations for Nonlinear observation over erasure channels, IEEE Transactions on Automatic Control, Vol. 58, Issue 2, pp-454-459, 2013.</li>
-								<li class="text-justify">U. Vaidya and N. Elia, Limitations for nonlinear stabilization over erasure channel: Scalar Case, Systems and Control Letters, Volume 61, Issue 9, Pages 959-966, 2012.</li>
-								<li class="text-justify">A. Diwadkar and U. Vaidya, Control of LTV system with intermittent communication, International Journal of Robust and Nonlinear Control, 2013.</li>
-								<li class="text-justify">A. Diwadkar and U. Vaidya, Synchronization in large scale nonlinear network with uncertain links, Automatica, Volume 100, February 2019, Pages 194-199.</li>
-								<li class="text-justify">P. G. Mehta, U. Vaidya and A. Banaszuk, Markov chains, entropy and fundamental limitations in nonlinear stabilization, IEEE Transactions on Automatic Control, Vol 53, pp. 784-791, 2008.</li>
-								<li class="text-justify">Raveendran, A. Mahindrakar, U. Vaidya, Dynamical System Approach for Time-Varying Constrained Convex Optimization Problems, IEEE Transactions on Automatic Control, 2023.</li>
-							</ul>
-							
-						</div>
-						<!-- End Selected Publication-->
-					</div>
-					<!-- Sidebar -->
-					
-					<!-- End Sidebar -->
-				</div>
-			</div>
-		</div>
-
-	     <!-- Footer -->
-	    <!-- Footer -->
-	    <div class="footer">
-	    	<div class="container">
-		    	<div class="row">
-		    		<div class="col-footer col-md-3 col-xs-6">
-		    			<h3>Contacts</h3>
-		    			<p class="contact-us-details">
-	        				<b>Address:</b> 233 Flour Daniel Innovation Building
-							Department of Mechanical Engineering
-							Clemson University
-							Clemson SC, 29634<br/>
-	        			<!--	<b>Phone:</b> +44 123 654321<br/>
-	        				<b>Fax:</b> +44 123 654321<br/>-->
-	        				<b>Email:</b> <a style="color: #D56E1D;">uvaidya@clemson.edu</a>
-		    		</div>
-		
-		    		<div class="col-footer col-md-4 col-xs-6">
-		    			
-	        			</p>
-		    		</div>
-		    		<div class="col-footer col-md-2 col-xs-6">
-		    			<h3>Stay Connected</h3>
-		    			<ul class="footer-stay-connected no-list-style">
-		    				<!--<li><a href="#" class="facebook"></a></li>
-		    				<li><a href="#" class="twitter"></a></li>-->
-		    				<li><a href="https://www.researchgate.net/profile/Umesh-Vaidya-3" target="_blank" class="googleplus"></a></li>
-		    			</ul>
-		    		</div>
-		    	</div>
-		    	<div class="row">
-		    		<div class="col-md-12">
-		    			<div class="footer-copyright">&copy; 2025 DyCo AI Lab. All rights reserved.</div>
-		    		</div>
-		    	</div>
-		    </div>
-	    </div>
-        <!-- Javascripts -->
-        <script src="http://ajax.googleapis.com/ajax/libs/jquery/1.9.1/jquery.min.js"></script>
-        <script>window.jQuery || document.write('<script src="js/jquery-1.9.1.min.js"><\/script>')</script>
-        <script src="js/bootstrap.min.js"></script>
-        <script src="http://cdn.leafletjs.com/leaflet-0.5.1/leaflet.js"></script>
-        <script src="js/jquery.fitvids.js"></script>
-        <script src="js/jquery.sequence-min.js"></script>
-        <script src="js/jquery.bxslider.js"></script>
-        <script src="js/main-menu.js"></script>
-        <script src="js/template.js"></script>
-
-    </body>
+    <section id="selected-publications" class="publications-section" aria-labelledby="publications-title">
+      <div class="container">
+        <div class="section-heading"><h2 id="publications-title">Selected Publications</h2><a class="text-link" href="page-publication.html">Complete bibliography <span aria-hidden="true">&rarr;</span></a></div>
+        <div class="publication-groups">
+          <h3 class="publication-group-heading">Networked Control and Fundamental Communication Limits</h3>
+          <ul class="reference-list">
+            <li id="ref-mean-square"><p class="citation">Sai Pushpak Nandanoori, Amit Diwadkar, and Umesh Vaidya. <cite>Mean Square Stability Analysis of Stochastic Continuous-Time Linear Networked Systems.</cite> IEEE Transactions on Automatic Control, 63(12), 4323&ndash;4330, 2018.</p><div class="reference-links"><a href="https://doi.org/10.1109/TAC.2018.2830882">DOI / Publisher</a><a href="https://arxiv.org/abs/1602.02857">Preprint</a></div></li>
+            <li id="ref-ltv"><p class="citation">Amit Diwadkar and Umesh Vaidya. <cite>Stabilization of linear time varying systems over uncertain channels.</cite> International Journal of Robust and Nonlinear Control, 24(7), 1205&ndash;1220, 2014 (first published online in 2012).</p><div class="reference-links"><a href="https://doi.org/10.1002/rnc.2935">DOI / Publisher</a></div></li>
+            <li id="ref-observation"><p class="citation">Amit Diwadkar and Umesh Vaidya. <cite>Limitations for Nonlinear Observation Over Erasure Channel.</cite> IEEE Transactions on Automatic Control, 58(2), 454&ndash;459, 2013.</p><div class="reference-links"><a href="https://doi.org/10.1109/TAC.2012.2208316">DOI / Publisher</a></div></li>
+            <li id="ref-scalar"><p class="citation">Umesh Vaidya and Nicola Elia. <cite>Stabilization of nonlinear systems over packet-drop links: Scalar case.</cite> Systems &amp; Control Letters, 61(9), 959&ndash;966, 2012.</p><div class="reference-links"><a href="https://doi.org/10.1016/j.sysconle.2012.05.008">DOI / Publisher</a></div></li>
+            <li id="ref-entropy"><p class="citation">Prashant G. Mehta, Umesh Vaidya, and Andrzej Banaszuk. <cite>Markov Chains, Entropy, and Fundamental Limitations in Nonlinear Stabilization.</cite> IEEE Transactions on Automatic Control, 53(3), 784&ndash;791, 2008.</p><div class="reference-links"><a href="https://doi.org/10.1109/TAC.2008.917640">DOI / Publisher</a></div></li>
+          </ul>
+          <h3 class="publication-group-heading">Synchronization of Uncertain Dynamical Networks</h3>
+          <ul class="reference-list">
+            <li id="ref-synchronization"><p class="citation">Amit Diwadkar and Umesh Vaidya. <cite>Synchronization in large-scale nonlinear network systems with uncertain links.</cite> Automatica, 100, 194&ndash;199, 2019.</p><div class="reference-links"><a href="https://doi.org/10.1016/j.automatica.2018.06.002">DOI / Publisher</a><a href="https://arxiv.org/abs/1409.3254">Preprint</a></div></li>
+            <li id="ref-tradeoffs"><p class="citation">Amit Diwadkar and Umesh Vaidya. <cite>Limitations and tradeoffs in synchronization of large-scale networks with uncertain links.</cite> Scientific Reports, 6, 21157, 2016.</p><div class="reference-links"><a href="https://doi.org/10.1038/srep21157">DOI / Publisher</a><a href="https://arxiv.org/abs/1409.3249">Preprint</a></div></li>
+          </ul>
+          <h3 class="publication-group-heading">Robust Optimization and Control</h3>
+          <ul class="reference-list">
+            <li id="ref-robust-continuous"><p class="citation">Keivan Ebrahimi, Nicola Elia, and Umesh Vaidya. <cite>A Continuous Time Dynamical System Approach for Solving Robust Optimization.</cite> European Control Conference (ECC), 1479&ndash;1485, 2019.</p><div class="reference-links"><a href="https://doi.org/10.23919/ECC.2019.8796115">DOI / Publisher</a></div></li>
+            <li id="ref-robust-discrete"><p class="citation">Keivan Ebrahimi, Umesh Vaidya, and Nicola Elia. <cite>Robust Optimization via Discrete-Time Saddle Point Algorithm.</cite> IEEE Conference on Decision and Control (CDC), 2473&ndash;2478, 2019.</p><div class="reference-links"><a href="https://doi.org/10.1109/CDC40024.2019.9028953">DOI / Publisher</a></div></li>
+          </ul>
+          <h3 class="publication-group-heading">Distributed and Time-Varying Optimization</h3>
+          <ul class="reference-list">
+            <li id="ref-time-varying"><p class="citation">Rejitha Raveendran, Arun D. Mahindrakar, and Umesh Vaidya. <cite>Dynamical System Approach for Time-Varying Constrained Convex Optimization Problems.</cite> IEEE Transactions on Automatic Control, 69(6), 3822&ndash;3834, 2024 (early access, 2023).</p><div class="reference-links"><a href="https://doi.org/10.1109/TAC.2023.3335004">DOI / Publisher</a><a href="https://arxiv.org/abs/2312.10203">Preprint</a></div></li>
+            <li id="ref-fixed-time"><p class="citation">Rejitha Raveendran, Arun D. Mahindrakar, and Umesh Vaidya. <cite>Fixed-Time Dynamical System Approach for Solving Time-Varying Convex Optimization Problems.</cite> American Control Conference (ACC), 198&ndash;203, 2022.</p><div class="reference-links"><a href="https://doi.org/10.23919/ACC53348.2022.9867287">DOI / Publisher</a></div></li>
+          </ul>
+        </div>
+      </div>
+    </section>
+    <div class="related-research soft-band"><div class="container"><p class="eyebrow">Related Research</p><a class="text-link" href="page-project-details-4.html">Operator-Theoretic Methods for Nonlinear Dynamics and Control <span aria-hidden="true">&rarr;</span></a></div></div>
+    <div class="research-return"><div class="container"><a class="text-link" href="page-Research.html"><span aria-hidden="true">&larr;</span> All Research at DyCoAI</a></div></div>
+  </main>
+  <footer id="contact" class="site-footer">
+    <div class="container footer-grid">
+      <div><h2>DyCoAI Laboratory</h2><p>Dynamics and Control for<br>Autonomy and Intelligence</p><p class="footer-affiliation">Clemson University</p></div>
+      <div><h3>Visit</h3><address>125A Flour Daniel Innovation Building<br>Department of Mechanical Engineering<br>Clemson University<br>Clemson, SC 29634</address></div>
+      <div><h3>Connect</h3><a href="mailto:uvaidya@clemson.edu">uvaidya@clemson.edu</a><a href="https://www.researchgate.net/profile/Umesh-Vaidya-3">ResearchGate <span aria-hidden="true">&nearr;</span></a><a href="https://scholar.google.com/citations?user=bzUVrKIAAAAJ&amp;hl=en">Google Scholar <span aria-hidden="true">&nearr;</span></a><a href="page-project-funding.html">Funding &amp; collaborators <span aria-hidden="true">&rarr;</span></a></div>
+    </div>
+    <div class="container footer-bottom"><span>&copy; 2026 DyCoAI Laboratory</span><a href="#main">Back to top <span aria-hidden="true">&uarr;</span></a></div>
+  </footer>
+</body>
 </html>
