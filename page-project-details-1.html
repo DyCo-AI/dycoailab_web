@@ -95,20 +95,22 @@
       <div class="container theme-layout">
         <div class="theme-copy">
           <p class="eyebrow">03 / Decisions under uncertainty</p>
-          <h2 id="robust-title">Robust Control and Optimization Under Uncertainty</h2>
-          <p>Robust optimization seeks decisions that remain feasible and effective across a prescribed uncertainty set. We study these problems through dynamical systems whose states include decision variables, multipliers, and uncertainty-related variables.</p>
-          <p>Our continuous-time formulation uses saddle-point dynamics rather than the standard gradient of a Lagrangian. Stability analysis connects equilibria of these dynamics to robust solutions for the convex-concave problem class and regularity assumptions considered in the paper. A complementary discrete-time algorithm brings this perspective to iterative computation.</p>
-          <p>Structured uncertainty sets, including intersections of ellipsoids, provide concrete examples of how uncertainty geometry enters the optimization dynamics. The trajectories illustrate a particular numerical example, rather than a convergence guarantee for arbitrary problems.</p>
+          <h2 id="robust-title">Robust Optimization Through Continuous-Time Dynamical Systems</h2>
+          <p>Robust optimization addresses decision-making and control problems in which system parameters, disturbances, or operating conditions are uncertain. Such problems frequently involve min-max formulations, where the objective is to optimize performance against the most adverse realization of uncertainty within a prescribed uncertainty set.</p>
+          <p>Our research develops a dynamical-systems framework for solving robust optimization problems by constructing continuous-time dynamics whose equilibria correspond to saddle-point solutions of the underlying min-max problem. This approach connects robust optimization with nonlinear stability theory, allowing convergence properties of optimization algorithms to be studied through the stability of their associated dynamical systems.</p>
+          <p>We investigate the design and analysis of robust optimization dynamics for problems involving structured uncertainty, including intersections of ellipsoidal uncertainty sets. The framework provides a systematic connection between robust optimization, saddle-point dynamics, and stability-based convergence analysis. Convergence results apply under the convex-concave structure and regularity assumptions of the corresponding formulation.</p>
           <ul class="contributions">
-            <li>Dynamical formulations that evolve optimization and uncertainty variables together.</li>
-            <li>Stability and convergence analysis under explicit problem assumptions.</li>
-            <li>Continuous- and discrete-time approaches to robust optimization.</li>
+            <li>Continuous-time dynamical formulations of robust min-max optimization problems.</li>
+            <li>Saddle-point characterization of robust optimization solutions.</li>
+            <li>Stability and convergence analysis of robust optimization dynamics.</li>
+            <li>Treatment of structured uncertainty sets, including intersections of ellipsoids.</li>
+            <li>Connections between nonlinear dynamical systems, robust optimization, and control.</li>
           </ul>
           <div class="text-links"><a href="#ref-robust-continuous">Continuous-time method</a><a href="#ref-robust-discrete">Discrete-time algorithm</a></div>
         </div>
         <figure class="portrait-figure">
           <a class="scientific-image" href="img/research/cyber-physical-systems/robust-optimization-dynamics.png" aria-label="Open figure at full resolution: Robust optimization variable trajectories above intersecting ellipsoidal uncertainty sets and solution markers."><img src="img/research/cyber-physical-systems/robust-optimization-dynamics.png" alt="Robust optimization variable trajectories above intersecting ellipsoidal uncertainty sets and solution markers." width="1024" height="1536" loading="lazy"></a>
-          <figcaption><strong>Robust optimization dynamics and uncertainty geometry.</strong> The upper panel shows the evolution of optimization variables. The lower panel shows intersecting ellipsoidal uncertainty sets with sample points and solution markers.<a class="figure-source" href="#ref-robust-continuous">Related research: Ebrahimi, Elia, and Vaidya, ECC (2019)</a></figcaption>
+          <figcaption><strong>Continuous-time robust optimization dynamics.</strong> The upper panel illustrates optimization variables approaching steady values in a saddle-point formulation. The lower panel shows an uncertainty set formed by intersecting ellipsoids, with sampled uncertainty realizations and an optimal-point marker. Convergence guarantees depend on the assumptions of the corresponding robust optimization problem.<a class="figure-source" href="#ref-robust-continuous">Related research: Ebrahimi, Elia, and Vaidya, ECC (2019)</a></figcaption>
         </figure>
       </div>
     </section>
@@ -117,19 +119,24 @@
       <div class="container">
         <div class="section-introduction theme-copy">
           <p class="eyebrow">04 / Optimization as dynamics</p>
-          <h2 id="optimization-title">Distributed Optimization Using Dynamical Systems</h2>
-          <p>Networked agents often need to optimize using local information while constraints and objectives change with time. We investigate continuous-time optimization dynamics and use nonlinear stability tools to study convergence, with distributed and constrained optimization as motivating settings.</p>
-          <p>Our published time-varying optimization work develops projected primal-dual systems that track optimizer trajectories. Asymptotic and fixed-time results hold under the stated convexity, smoothness, and feasibility assumptions; fixed-time bounds do not depend on initialization. These results are distinct from a blanket convergence guarantee for every distributed network.</p>
+          <h2 id="optimization-title">Distributed and Time-Varying Optimization Using Dynamical Systems</h2>
+          <p>Distributed optimization concerns problems in which multiple agents or interconnected subsystems collectively seek an optimal solution using locally available information and communication with neighboring agents. Such problems arise in cooperative control, multi-agent coordination, resource allocation, and networked decision-making.</p>
+          <p>Our research develops continuous-time dynamical approaches to distributed and constrained optimization, exploiting connections between optimization theory and nonlinear dynamical systems. In this framework, optimization variables evolve according to designed differential equations, and the stability and convergence of these dynamics provide a basis for analyzing the optimization process.</p>
+          <p>We investigate optimization problems involving network interactions, constraints, and time-varying objectives. Different formulations address asymptotic convergence, tracking of time-varying optimal solutions, and finite- or fixed-time convergence under appropriate assumptions.</p>
+          <p>An important aspect of this research is the interpretation of optimization algorithms as dynamical systems, enabling tools from nonlinear stability theory to be applied to the design and analysis of distributed computational methods.</p>
           <ul class="contributions">
-            <li>Continuous-time approaches to constrained and time-varying convex optimization.</li>
-            <li>Lyapunov-based tracking analysis and fixed-time convergence mechanisms.</li>
-            <li>A time-varying extended Fermat-Torricelli example using a sum-of-squared-distances objective.</li>
+            <li>Continuous-time dynamical approaches to distributed optimization.</li>
+            <li>Optimization over interconnected networks using local information.</li>
+            <li>Stability-based convergence analysis of optimization dynamics.</li>
+            <li>Dynamical methods for constrained and time-varying optimization.</li>
+            <li>Finite-time and fixed-time optimization formulations under appropriate assumptions.</li>
           </ul>
+          <p><strong>Related but distinct properties.</strong> Distributed optimization describes how computation and information are shared across agents. Time-varying optimization allows the optimizer to evolve with time. Fixed-time convergence guarantees a uniform settling-time bound independent of the initial condition, under the assumptions of the method. The example below illustrates a specific fixed-time, time-varying optimization contribution; this guarantee does not apply to all distributed algorithms in the research program.</p>
           <div class="text-links"><a href="#ref-time-varying">Constrained optimization</a><a href="#ref-fixed-time">Fixed-time dynamics</a></div>
         </div>
         <figure class="wide-figure">
           <a class="scientific-image" href="img/research/cyber-physical-systems/distributed-optimization-trajectories.png" aria-label="Open figure at full resolution: Four snapshots of moving convex sets and the optimizer trajectory in a time-varying squared-distance problem."><img src="img/research/cyber-physical-systems/distributed-optimization-trajectories.png" alt="Four snapshots of moving convex sets and the optimizer trajectory in a time-varying squared-distance problem, ordered from left to right by increasing time." width="2172" height="724" loading="lazy"></a>
-          <figcaption><strong>Tracking a time-varying optimizer.</strong> Snapshots at <i>T</i><sub>f</sub>/4, <i>T</i><sub>f</sub>/2, 3<i>T</i><sub>f</sub>/4, and <i>T</i><sub>f</sub> show the evolution of fixed-time optimization dynamics. The red dotted trajectory minimizes the sum of squared distances to the convex sets.<a class="figure-source" href="https://arxiv.org/html/2312.10203v1#S6">Raveendran, Mahindrakar, and Vaidya, Figure 2</a></figcaption>
+          <figcaption><strong>Evolution of a fixed-time dynamical optimization process.</strong> From left to right, snapshots at <i>T</i><sub>f</sub>/4, <i>T</i><sub>f</sub>/2, 3<i>T</i><sub>f</sub>/4, and <i>T</i><sub>f</sub> illustrate trajectories approaching a time-varying optimal solution. The red dotted trajectory represents the optimizer minimizing the sum of squared distances to the convex sets. This example uses the fixed-time formulation and assumptions of the cited paper.<a class="figure-source" href="https://arxiv.org/html/2312.10203v1#S6">Raveendran, Mahindrakar, and Vaidya, Dynamical System Approach for Time-Varying Constrained Convex Optimization Problems, Figure 2</a></figcaption>
         </figure>
       </div>
     </section>
@@ -151,12 +158,12 @@
             <li id="ref-synchronization"><p class="citation">Amit Diwadkar and Umesh Vaidya. <cite>Synchronization in large-scale nonlinear network systems with uncertain links.</cite> Automatica, 100, 194&ndash;199, 2019.</p><div class="reference-links"><a href="https://doi.org/10.1016/j.automatica.2018.06.002">DOI / Publisher</a><a href="https://arxiv.org/abs/1409.3254">Preprint</a></div></li>
             <li id="ref-tradeoffs"><p class="citation">Amit Diwadkar and Umesh Vaidya. <cite>Limitations and tradeoffs in synchronization of large-scale networks with uncertain links.</cite> Scientific Reports, 6, 21157, 2016.</p><div class="reference-links"><a href="https://doi.org/10.1038/srep21157">DOI / Publisher</a><a href="https://arxiv.org/abs/1409.3249">Preprint</a></div></li>
           </ul>
-          <h3 class="publication-group-heading">Robust Optimization and Control</h3>
+          <h3 class="publication-group-heading">Robust Min-Max Optimization and Saddle-Point Dynamics</h3>
           <ul class="reference-list">
             <li id="ref-robust-continuous"><p class="citation">Keivan Ebrahimi, Nicola Elia, and Umesh Vaidya. <cite>A Continuous Time Dynamical System Approach for Solving Robust Optimization.</cite> European Control Conference (ECC), 1479&ndash;1485, 2019.</p><div class="reference-links"><a href="https://doi.org/10.23919/ECC.2019.8796115">DOI / Publisher</a></div></li>
             <li id="ref-robust-discrete"><p class="citation">Keivan Ebrahimi, Umesh Vaidya, and Nicola Elia. <cite>Robust Optimization via Discrete-Time Saddle Point Algorithm.</cite> IEEE Conference on Decision and Control (CDC), 2473&ndash;2478, 2019.</p><div class="reference-links"><a href="https://doi.org/10.1109/CDC40024.2019.9028953">DOI / Publisher</a></div></li>
           </ul>
-          <h3 class="publication-group-heading">Distributed and Time-Varying Optimization</h3>
+          <h3 class="publication-group-heading">Distributed, Constrained, and Time-Varying Optimization</h3>
           <ul class="reference-list">
             <li id="ref-time-varying"><p class="citation">Rejitha Raveendran, Arun D. Mahindrakar, and Umesh Vaidya. <cite>Dynamical System Approach for Time-Varying Constrained Convex Optimization Problems.</cite> IEEE Transactions on Automatic Control, 69(6), 3822&ndash;3834, 2024 (early access, 2023).</p><div class="reference-links"><a href="https://doi.org/10.1109/TAC.2023.3335004">DOI / Publisher</a><a href="https://arxiv.org/abs/2312.10203">Preprint</a></div></li>
             <li id="ref-fixed-time"><p class="citation">Rejitha Raveendran, Arun D. Mahindrakar, and Umesh Vaidya. <cite>Fixed-Time Dynamical System Approach for Solving Time-Varying Convex Optimization Problems.</cite> American Control Conference (ACC), 198&ndash;203, 2022.</p><div class="reference-links"><a href="https://doi.org/10.23919/ACC53348.2022.9867287">DOI / Publisher</a></div></li>
