@@ -7802,6 +7802,46 @@
         "answers": [],
         "links": []
       }
+    },
+    {
+      "id": "lee_2026_kernel_quasi_potentials",
+      "authors": "Jonghyeon Lee, Boumediene Hamzi, Yang Li, Houman Owhadi, Umesh Vaidya, and Naiming Xie",
+      "title": "Kernel methods for the computation of quasi-potentials in stochastic dynamical systems",
+      "venue": "Chaos, Solitons & Fractals, November 2026",
+      "year": 2026,
+      "yearSource": "Supplied by the laboratory director",
+      "status": "listed",
+      "types": ["journal"],
+      "areas": [],
+      "areaEvidence": [],
+      "abstract": "",
+      "links": [
+        {
+          "label": "SSRN preprint (2025)",
+          "url": "https://papers.ssrn.com/sol3/papers.cfm?abstract_id=5317127",
+          "kind": "paper"
+        },
+        {
+          "label": "BibTeX",
+          "url": "papers/lee-2026-kernel-quasi-potentials.bib",
+          "kind": "bibtex"
+        }
+      ],
+      "featured": false,
+      "issues": [],
+      "source": {
+        "section": "Year 2026",
+        "anchor": "lee_2026_kernel_quasi_potentials",
+        "citation": "Jonghyeon Lee, Boumediene Hamzi, Yang Li, Houman Owhadi, Umesh Vaidya, and Naiming Xie, Kernel methods for the computation of quasi-potentials in stochastic dynamical systems, Chaos, Solitons & Fractals, November 2026.",
+        "body": "Journal and publication date supplied by the laboratory director. The Paper link points to the 2025 SSRN preprint.",
+        "answers": ["The Paper link points to the 2025 SSRN preprint."],
+        "links": [
+          {
+            "label": "SSRN preprint (2025)",
+            "url": "https://papers.ssrn.com/sol3/papers.cfm?abstract_id=5317127"
+          }
+        ]
+      }
     }
   ],
   "areas": [
